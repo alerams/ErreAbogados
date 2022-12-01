@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Detalle Cliente</title>
+  </head>
+  <body class="fondo-gris">    
+    <div class="sidenav text-center">
+      <a href="menu.html"><i class="fa-solid fa-house"></i></a>
+      <a href="cliente.html" class="fondo-naranja rounded-end"><i class="fa-solid fa-user text-white"></i></a>
+      <a href="demanda.html"><i class="fa-solid fa-file-lines"></i></a>
+      <a href="expedientes.html"><i class="fa-solid fa-layer-group"></i></a>
+      <a href="#contact"><i class="fa-solid fa-folder"></i></a>
+      <a href="#contact"><i class="fa-solid fa-cloud-arrow-up"></i></a>
+      <a href="#contact"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    </div>    
+    <a class="float rounded fondo-azul2 boton-naranja text-center" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button">
+      <i class="fa-solid fa-angle-right my-float"></i>
+      </a>
+    <div class="main">
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg bg-white">
+              <div class="container-fluid">
+                <div class="navbar-brand">
+                    <div class="input-group mb-2 px-5 ms-5">
+                      <span class="input-group-text fondo-gris border-0"><i class="fa-solid fa-magnifying-glass color-gris2"></i></span>
+                      <input type="text" class="form-control form-control-lg border-0 fs-6 fw-light fondo-gris sombra1" placeholder="Buscar"  aria-label="Search">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center gap-2">
+                  <i class="fa-solid fa-gear fondo-gris px-2 py-2 rounded icon"></i>
+                  <i class="fa-solid fa-calendar-days fondo-gris px-2 py-2 rounded icon"></i>
+                  <i class="fa-solid fa-bell fondo-gris px-2 py-2 rounded icon"></i>
+                  <img class="rounded icon"  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  <div class="dropdown">
+                    <button class="btn color-negro dropdown-toggle border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ramiro Antonio
+                    </button>
+                    <ul class="dropdown-menu border-0">
+                      <li><a class="dropdown-item" href="#">Ajustes</a></li>
+                      <li><a class="dropdown-item" href="#">Perfil</a></li>
+                      <li><a class="dropdown-item" href="#">Cerrar sesíon</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+
+                    <!--Offcanvas-->
+        <div class="offcanvas offcanvas-start border-0 sidenav-expanded fondo-azul" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header text-white">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Erre Abogados</h5>
+            <button type="button" class="btn-close boton-naranja" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">            
+              <div class="sidenav-expanded">
+                <a href="menu.html" class="fondo-naranja">
+                  <i class="fa-solid fa-house text-white"></i><span class="text-white">Dashboard</span>
+                </a>
+                <a href="cliente.html" class="boton-azul">
+                  <i class="fa-solid fa-user"></i><span>
+                    Clientes
+                  </span>
+                </a>
+                <a href="demanda.html" class="boton-azul">
+                  <i class="fa-solid fa-file-lines"></i><span>
+                    Demanda
+                  </span>
+                </a>
+                <a href="" class="boton-azul">
+                  <i class="fa-solid fa-layer-group"></i><span>
+                    Expedientes
+                  </span>
+                </a>
+                <a href="" class="boton-azul">
+                  <i class="fa-solid fa-folder"></i><span>
+                    clientes
+                  </span>
+                </a>
+                <a href="" class="boton-azul">
+                  <i class="fa-solid fa-cloud-arrow-up"></i><span>
+                    Carga masiva
+                  </span>
+                </a>
+                <a href="index.html" class="boton-azul">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i><span>
+                    Cerrar sesión
+                  </span>
+                </a>
+              </div>          
+        </div>
+        </div>
+
+      <div class="bg-white mt-5 container-fluid p-3">
+        <div class="d-flex justify-content-between aligns-items-center mb-5 py-4 px-5 border-bottom">
+          <div class="d-flex">
+            <h2 class="fw-semibold">Cliente</h2>
+          </div>
+          <button type="button" class="btn  px-5 fondo-naranja boton-naranja">
+          </i><span>Editar</span>
+        </button>
+      </div>
+      <div class="d-flex">
+      <div class="mayus fondo-gris rounded px-4 py-4">
+        <h2 class="py-3 fw-semibold">AL</h2>
+      </div>
+      <div class="ms-5  textos">
+        <div class="px-5">
+          <p class="fw-semibold fs-5">Aluguesa</p>
+          <p class="fw-normal color-gris2 fs-6">Correo electrónico:<span class="color-negro fw-normal fs-6">ejemplo@mail.com</span></p>
+          <p class="fw-normal color-gris2 fs-6">Teléfono: <span class="color-negro fw-normal fs-6">879-654-279</span></p>
+        </div>
+      </div>
+    </div>
+    <!--Domicilios-->
+        <div class="d-flex justify-content-between aligns-items-center mb-5 py-5 px-5">
+          <div class="d-flex">
+            <h3>Domicilios</h3>
+          </div>
+          <button type="button" class="btn float-end gap-2  fondo-naranja boton-naranja text-white text-nowrap" data-bs-toggle="modal" data-bs-target="#domicilioModal">
+          </i><span>Agregar domicilio</span>
+        </button>
+      </div>
+        <!--Tabla-->
+        <table class="table text-center textos">
+          <thead>
+            <tr class="color-gris2 fs-6 fw-light">
+              <th scope="col">Domicilio</th>
+              <th scope="col">Tipo de domicilio</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row fs-6">Aluguesa</td>
+              <td>5879</td>
+              <td><button type="button" class="btn gap-2 boton-azul fondo-azul2 text-white">
+                <i class="fa-solid fa-pen px-2"></i><span>Editar</span>
+              </button></td>
+            </tr>
+            <tr>
+              <td scope="row">Aluguesa</td>
+              <td>4579</td>
+              <td><button type="button" class="btn gap-2 boton-azul fondo-azul2 text-white">
+                <i class="fa-solid fa-pen px-2"></i><span>Editar</span>
+              </button></td>
+            </tr>
+            <tr>
+              <td scope="row">Aluguesa</td>
+              <td>3248</td>
+              <td><button type="button" class="btn boton-azul  gap-2 fondo-azul2 text-white">
+                <i class="fa-solid fa-pen px-2"></i></i><span>Editar</span>
+              </button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Modal Domicilio-->
+<div class="modal textos fade" id="domicilioModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar domicilio</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body px-4">
+        <h5 class="mt-3">Tipo de domicilio</h5>
+        <div class="row mb-5 py-3">
+          <div class="col-md-6 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Tipo de domicilio</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccione una opción</option>
+                <option value="1">Domicilio Fiscal</option>
+                <option value="2">Domicilio convencional</option>
+                <option value="3">Domicilio de la fuente de trabajo </option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Domicilio</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn fondo-naranja boton-naranja px-5">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Tabla personas-->
+      <div class="container-fluid mt-5 p-3 bg-white">
+                <!--Personas-->
+                <div class="d-flex justify-content-between aligns-items-center mb-5 py-5 px-5">
+                  <div class="d-flex">
+                    <h3>Personas</h3>
+                  </div>
+                <div class="d-grid gap-3 d-md-flex justify-content-md-end">
+                  <div class="dropdown">
+                    <button class="btn py-2 px-3 fondo-verde boton-verde color-azul dropdown-toggle border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-sliders px-2"></i> Filtrar 
+                    </button>
+                    <ul class="dropdown-menu border-0 py-4">
+                      <li><a class="dropdown-item" href="#">Nombre</a></li>
+                      <li><a class="dropdown-item" href="#">Correo electrónico</a></li>
+                      <li><a class="dropdown-item" href="#">Puesto</a></li>
+                    </ul>
+                  </div>
+                <button type="button" class="btn gap-2 py-2 fondo-naranja boton-naranja text-white" data-bs-toggle="modal" data-bs-target="#tramiteModal">
+                </i><span>Agregar persona</span>
+              </button>
+                </div>
+              </div>
+              <!-- Modal persona -->
+<div class="modal textos fade" id="personaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar persona</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body px-4">
+        <div class="row mb-5 py-3">
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Tipo de persona</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccione una opción</option>
+                <option value="1">Peronsa moral</option>
+                <option value="2">Persona física</option>
+              </select>
+            </div>
+          </div>
+          <h5 class="mt-2 py-2">Persona Física</h5>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Nombre</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Nombre"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Apellido</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Apellido"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Puesto</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Teléfono"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Teléfono</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Correo electrónico"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Correo electrónico</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio fiscal"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn fondo-naranja boton-naranja px-5">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+                <!--Tabla personas-->
+                <table class="table text-center textos">
+                  <thead>
+                    <tr class="color-gris2 fs-6">
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Correo electrónico</th>
+                      <th scope="col">Telefono</th>
+                      <th scope="col">Puesto</th>
+                      <th scope="col">Opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row fs-6">Aluguesa</td>
+                      <td>5879</td>
+                      <td>5879</td>
+                      <td>5879</td>
+                      <td><button type="button" class="btn gap-2 boton-azul fondo-azul2 text-white">
+                        <i class="fa-solid fa-pen px-2 "></i><span class="fw-light">Editar</span>
+                      </button></td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Aluguesa</td>
+                      <td>4579</td>
+                      <td>4579</td>
+                      <td>4579</td>
+                      <td><button type="button" class="btn gap-2 boton-azul2 fondo-azul2 text-white">
+                        <i class="fa-solid fa-pen px-2"></i><span>Editar</span>
+                      </button></td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Aluguesa</td>
+                      <td>3248</td>
+                      <td>3248</td>
+                      <td>3248</td>
+                      <td><button type="button" class="btn boton-azul  gap-2 fondo-azul2 text-white">
+                        <i class="fa-solid fa-pen px-2"></i></i><span>Editar</span>
+                      </button></td>
+                    </tr>
+                  </tbody>
+                </table>
+      </div>
+      <div class="container-fluid mt-5 p-3 bg-white">
+                <!--Tramite Proceso-->
+                <div class="d-flex justify-content-between aligns-items-center mb-5 py-5 px-5">
+                  <div class="d-flex">
+                    <h3>Trámite / Proceso</h3>
+                  </div>
+                <div class="d-grid gap-3 d-md-flex justify-content-md-end">
+                  <div class="dropdown">
+                    <button class="btn py-2 px-3 fondo-verde boton-verde color-azul dropdown-toggle border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa-solid fa-sliders px-2"></i> Filtrar 
+                    </button>
+                    <ul class="dropdown-menu border-0 py-4">
+                      <li><a class="dropdown-item" href="#">Nombre</a></li>
+                      <li><a class="dropdown-item" href="#">Correo electrónico</a></li>
+                      <li><a class="dropdown-item" href="#">Puesto</a></li>
+                    </ul>
+                  </div>
+                <button type="button" class="btn gap-2 py-2 fondo-naranja boton-naranja text-white" data-bs-toggle="modal" data-bs-target="#tramiteModal">
+                </i><span>Agregar expediente</span>
+              </button>
+                </div>
+              </div>
+              <!-- Modal -->
+<div class="modal textos fade" id="tramiteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar trámite o proceso</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body px-4">
+        <div class="row mb-5 py-3">
+          <div class="col-md-4 ">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Cliente / Prospecto</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Cliente/Prospecto"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Proceso / Trámite</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccione una opción</option>
+                <option value="1">Opción 1</option>
+                <option value="2">Opción 2</option>
+                <option value="3">Opción 3</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Fecha de intervención</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccione una opción</option>
+                <option value="1">Opción 1</option>
+                <option value="2">Opción 2</option>
+                <option value="3">Opción 3</option>
+              </select>
+            </div>
+          </div>
+          <h5 class="mt-2 py-2">Proceso / Trámite </h5>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Número de expediente</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Nombre"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Año</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Apellido"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Junta</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Teléfono"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Mesa</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Correo electrónico"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Nombre completo autoridad</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio fiscal"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Domicilio</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio convencional"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Tipo de expediente</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccione una opción</option>
+                <option value="1">Opción 1</option>
+                <option value="2">Opción 2</option>
+                <option value="3">Opción 3</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Ubicación en físico</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la fuente de trabajo"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Código de barras</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la fuente de trabajo"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Número de proyecto</label>
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la fuente de trabajo"/>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Estado administrativo</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccione una opción</option>
+                <option value="1">Opción 1</option>
+                <option value="2">Opción 2</option>
+                <option value="3">Opción 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn fondo-naranja boton-naranja px-5">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>              
+                <!--Tabla-->
+                <table class="table text-center textos">
+                  <thead>
+                    <tr class="color-gris2 fs-6">
+                      <th scope="col">Cliente</th>
+                      <th scope="col">Autoridad</th>
+                      <th scope="col">Actores</th>
+                      <th scope="col">Demandado</th>
+                      <th scope="col">Número de expediente</th>
+                      <th scope="col">Importe Total</th>
+                      <th scope="col">Total contingencia</th>
+                      <th scope="col">Estatus</th>
+                      <th scope="col">Opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row fs-6">Aluguesa</td>
+                      <td>Loremp ipsum</td>
+                      <td class="color-naranja fw-semibold">Wesley James y otros</td>
+                      <td>Alberta Floys y otros</td>
+                      <td>2552/2015/15-A</td>
+                      <td>$53,400.00</td>
+                      <td>$13,200.00</td>
+                      <td><span class="badge fondo-verde2 fs-6">Activo</span></td>
+                      <td><button type="button" class="btn boton-azul  fondo-azul2 text-white">
+                        <i class="fa-solid fa-eye px-2"></i><span>Ver</span>
+                      </button></td>
+                    </tr>                                
+                  </tbody>
+                </table>
+      </div>
+    </div>
+       
+    <script src="axios/axios.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+  </body>
+  </html>

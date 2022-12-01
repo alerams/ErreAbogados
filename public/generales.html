@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>Generales</title>
+  </head>
+  <body class="fondo-gris">
+    <div class="sidenav text-center">
+      <a href="menu.html"><i class="fa-solid fa-house"></i></a>
+      <a href="cliente.html"><i class="fa-solid fa-user"></i></a>
+      <a href="demanda.html"><i class="fa-solid fa-file-lines"></i></a>
+      <a href="expedientes.html" class="fondo-naranja rounded-end text-white"
+        ><i class="fa-solid fa-layer-group"></i
+      ></a>
+      <a href="generales.html"><i class="fa-solid fa-folder"></i></a>
+      <a href="#contact"><i class="fa-solid fa-cloud-arrow-up"></i></a>
+      <a href="#contact"
+        ><i class="fa-solid fa-arrow-right-from-bracket"></i
+      ></a>
+    </div>
+    <a
+      class="float rounded fondo-azul3 boton-naranja text-center"
+      data-bs-toggle="offcanvas"
+      href="#offcanvasExample"
+      role="button"
+    >
+      <i class="fa-solid fa-angle-right my-float"></i>
+    </a>
+    <!--Offcanvas-->
+    <div
+      class="offcanvas offcanvas-start sidenav-expanded border-0 fondo-azul"
+      tabindex="-1"
+      id="offcanvasExample"
+    >
+      <div class="offcanvas-header text-white">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          Erre Abogados
+        </h5>
+        <button
+          type="button"
+          class="btn-close boton-naranja"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="sidenav-expanded">
+          <a href="menu.html" class="fondo-naranja">
+            <i class="fa-solid fa-house text-white"></i
+            ><span class="text-white">Dashboard</span>
+          </a>
+          <a href="cliente.html" class="boton-azul">
+            <i class="fa-solid fa-user"></i><span> Clientes </span>
+          </a>
+          <a href="demanda.html" class="boton-azul">
+            <i class="fa-solid fa-file-lines"></i><span> Demanda </span>
+          </a>
+          <a href="expedientes.html" class="boton-azul">
+            <i class="fa-solid fa-layer-group"></i><span> Expedientes </span>
+          </a>
+          <a href="generales.html" class="boton-azul">
+            <i class="fa-solid fa-folder"></i><span> clientes </span>
+          </a>
+          <a href="" class="boton-azul">
+            <i class="fa-solid fa-cloud-arrow-up"></i
+            ><span> Carga masiva </span>
+          </a>
+          <a href="index.html" class="boton-azul">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i
+            ><span> Cerrar sesión </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--Main-->
+    <div class="main">
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg bg-white mb-3">
+        <div class="container-fluid">
+          <div class="navbar-brand">
+            <div class="input-group ms-5">
+              <span class="input-group-text fondo-gris border-0">
+                <i class="fa-solid fa-magnifying-glass color-gris2"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control form-control-lg border-0 fs-6 fw-light fondo-gris sombra1"
+                placeholder="Buscar"
+              />
+            </div>
+          </div>
+          <div class="d-flex">
+            <i
+              class="fa-solid fa-gear fondo-gris size-icons-navbar text-center pt-2 me-2 rounded"
+            ></i>
+            <i
+              class="fa-solid fa-calendar-days fondo-gris size-icons-navbar text-center pt-2 me-2 rounded"
+            ></i>
+            <i
+              class="fa-solid fa-bell fondo-gris size-icons-navbar text-center pt-2 me-2 rounded"
+            ></i>
+            <img
+              class="rounded size-icons-navbar"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+            />
+            <div class="dropdown">
+              <button
+                class="btn color-negro dropdown-toggle border-0"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Ramiro Antonio
+              </button>
+              <ul class="dropdown-menu border-0">
+                <li><a class="dropdown-item" href="#">Ajustes</a></li>
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><a class="dropdown-item" href="#">Cerrar sesíon</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--Titulo-->
+      <div class="bg-white mt-4 container p-3">
+        <div
+          class="d-flex justify-content-between aligns-items-center mb-5 py-5 px-5 border-bottom"
+        >
+          <div class="d-flex">
+            <h2 class="btn-azul fw-semibold">
+              Expediente: 1212/2015/15-A SA DE CV vs Jorge Pérez López
+            </h2>
+          </div>
+        </div>
+        <!-- Generales Buttons -->
+        <div class="row px-5 mt-4">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 col-xxl-12">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="pills-generales-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-generales"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-home"
+                  aria-selected="true"
+                >
+                  Generales
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-acuerdos-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-acuerdos"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-profile"
+                  aria-selected="false"
+                >
+                  Acuerdos
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-acciones-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-acciones"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-contact"
+                  aria-selected="false"
+                >
+                  Acciones
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-excepciones-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-excepciones"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-contact"
+                  aria-selected="false"
+                >
+                  Excepciones
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-pruebas-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-pruebas"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-contact"
+                  aria-selected="false"
+                >
+                  Pruebas
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-resolucion-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-resolucion"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-contact"
+                  aria-selected="false"
+                >
+                  Resolución
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-conconciliacion-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-conciliacion"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-contact"
+                  aria-selected="false"
+                >
+                  Conciliación
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-reportes-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-reportes"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-contact"
+                  aria-selected="false"
+                >
+                  Reportes
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-documentos-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-documentos"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-contact"
+                  aria-selected="false"
+                >
+                  Documentos
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+          <!-- Generales-->
+          <div
+            class="tab-pane fade show active"
+            id="pills-generales"
+            role="tabpanel"
+            aria-labelledby="pills-home-tab"
+            tabindex="0"
+          >
+            <div class="row px-4">
+              <div class="col-6 py-2 mb-4">
+                <h4>Generales</h4>
+              </div>
+              <div class="col-6">
+                <div class="text-end pe-5">
+                  <span class="font-17">Vigente</span>
+                  <button type="button" class="btn fondo-gris boton-azul ms-2">
+                    <span>Concluido</span>
+                  </button>
+                  <span class="font-17">Activo</span>
+                  <button type="button" class="btn fondo-gris boton-azul ms-2">
+                    <span>Inactivo</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!--Sections-->
+
+            <div class="container bg-white px-4">
+              <div class="row">
+                <div
+                  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5"
+                >
+                  <div class="card bg-white py-3">
+                    <div
+                      class="d-flex justify-content-between aligns-items-center mb-5 py-3"
+                    >
+                      <div class="d-flex">
+                        <div class="mayus fondo-gris rounded px-4 py-4">
+                          <h2 class="py-3 fw-semibold">AL</h2>
+                        </div>
+                        <p class="fw-semibold fs-5 px-5 ms-4 py-4">Aluguesa</p>
+                      </div>
+                      <i class="px-4 py-3 fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                    <div class="row px-5">
+                      <div class="col-5">
+                        <span class="fw-normal color-gris2 fs-6"
+                          >Expediente:</span
+                        >
+                      </div>
+                      <div class="col-7">
+                        <span class="color-negro fw-normal fs-6 px-5"
+                          >2552/2015/15-A</span
+                        >
+                      </div>
+                      <div class="col-5">
+                        <span class="fw-normal color-gris2 fs-6"
+                          >Tribunal:</span
+                        >
+                      </div>
+                      <div class="col-7">
+                        <span class="color-negro fw-normal fs-6 px-5"
+                          >Junta especial no. 15</span
+                        >
+                      </div>
+                      <div class="col-5">
+                        <span class="fw-normal color-gris2 fs-6">Actores:</span>
+                      </div>
+                      <div class="col-7">
+                        <span class="color-negro fw-normal fs-6 px-5"
+                          >Magguie Romero</span
+                        >
+                      </div>
+                      <div class="col-5">
+                        <span class="fw-normal color-gris2 fs-6"
+                          >Demandados:</span
+                        >
+                      </div>
+                      <div class="col-7">
+                        <span class="color-negro fw-normal fs-6 px-5"
+                          >Juan Pérez</span
+                        >
+                      </div>
+                      <div class="col-5">
+                        <span class="fw-normal color-gris2 fs-6"
+                          >Demanda inicial:</span
+                        >
+                      </div>
+                      <div class="col-7">
+                        <span class="color-negro fw-normal fs-6 px-5"
+                          >25 Ene 2022</span
+                        >
+                      </div>
+                      <div class="col-5">
+                        <span class="fw-normal color-gris2 fs-6"
+                          >Ampliación, modificación, aclaración,
+                          precisión:</span
+                        >
+                      </div>
+                      <div class="col-7">
+                        <span class="color-negro fw-normal fs-6 px-5"
+                          >13 Jul 2022</span
+                        >
+                      </div>
+                      <div class="col-5">
+                        <span class="fw-normal color-gris2 fs-6"
+                          >Demanda laboral:</span
+                        >
+                      </div>
+                      <div class="col-7">
+                        <span class="color-negro fw-normal fs-6 px-5"
+                          >25 Ene 2022</span
+                        >
+                      </div>
+                      <div class="col-5">
+                        <span class="fw-normal color-gris2 fs-6"
+                          >Fecha de presentación de demanda:</span
+                        >
+                      </div>
+                      <div class="col-7">
+                        <span class="color-negro fw-normal fs-6 px-5"
+                          >25 Ene 2022</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5"
+                >
+                  <div class="card bg-white py-3">
+                    <div class="row px-4">
+                      <div class="col-12">
+                        <h5>Linea del tiempo / Riesgo</h5>
+                      </div>
+                    </div>
+                    <div class="col-12 px-4 mt-5 text-center">
+                      <img src="img/my-app.png" class="chart" />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5"
+                >
+                  <div class="card py-3">
+                    <div class="row">
+                      <div class="col-12"></div>
+                      <div class="row mt-3 py-4 mb-5">
+                        <div class="col-8 px-5">
+                          <h2 class="fs-5 fw-semibold">Acumulado</h2>
+                        </div>
+                        <div class="col-4 text-end pe-5">
+                          <button class="btn fondo-naranja boton-naranja">
+                            Agregar
+                          </button>
+                        </div>
+                        <div class="col-12 px-5">
+                          <span class="color-gris2">No hay registros</span>
+                          <span class="fw-semibold px-4">0</span>
+                        </div>
+                      </div>
+                      <div class="row py-4 mb-5">
+                        <div class="col-8 ps-5">
+                          <h2 class="fs-5 fw-semibold">Alias</h2>
+                        </div>
+                        <div class="col-4 text-end pe-5">
+                          <button class="btn fondo-naranja boton-naranja">
+                            Agregar
+                          </button>
+                        </div>
+                        <div class="col-12 px-5">
+                          <span class="color-gris2">No hay registros</span>
+                          <span class="fw-semibold px-4">0</span>
+                        </div>
+                      </div>
+                      <div class="row py-4 mb-5">
+                        <div class="col-8 ps-5">
+                          <h2 class="fs-5 fw-semibold">Relacionado</h2>
+                        </div>
+                        <div class="col-4 text-end pe-5">
+                          <button class="btn fondo-naranja boton-naranja">
+                            Agregar
+                          </button>
+                        </div>
+                        <div class="col-12 px-5">
+                          <span class="color-gris2">Total de registros:</span>
+                          <span class="fw-semibold px-4">4</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5"
+                >
+                  <div class="card bg-white py-3">
+                    <div class="px-4">
+                      <h5>Conciliación y mediación</h5>
+                    </div>
+                    <div class="row px-4 mt-4 rounded">
+                      <div class="col-12 fondo-gris">
+                        <div class="row">
+                          <div class="col-8">
+                            <span class="fst-italic"
+                              >Se ofrecio la cantidad de $40,000.00</span
+                            >
+                          </div>
+                          <div class="col-4 text-end"></div>
+                          <div class="col-12 text-end pe-2 font-14">
+                            <span>Fecha: 25 Ene 2022</span>
+                            <p>Por:Antonio Ramiro</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mt-3 mb-2 ms-1">
+                        <div class="col-12 text-end ms-4">
+                          <button
+                            type="button"
+                            class="btn fondo-naranja boton-naranja"
+                          >
+                            <span>Se acepta</span>
+                          </button>
+                          <button
+                            type="button"
+                            class="btn ms-2 fondo-naranja boton-naranja"
+                          >
+                            <span>No acepta</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-3 fw-semibold">
+                        Representado: Actor
+                      </div>
+                      <div class="col-md-12 mb-4">
+                        <div class="form-outline">
+                          <label
+                            class="form-label fw-normal color-negro"
+                            for="typeEmailX-2 "
+                            >Nombre</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control form-control-lg fs-6 fw-normal fondo-gris border-0"
+                            placeholder="Ramiro Antonio"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-4">
+                        <div class="form-outline">
+                          <label
+                            class="form-label fw-normal color-negro"
+                            for="typeEmailX-2 "
+                            >Ingresar cantidad</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control form-control-lg fs-6 fw-normal"
+                            placeholder="Ingresar cantidad"
+                          />
+                          <p class="fst-italic px-2 color-gris2 mt-2">
+                            Escriba una cantidad, presione enter para guardar
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="axios/axios.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+body {
+  font-family: 'Poppins', sans-serif !important;
+}
+.myForm {
+  border-radius: 8px;
+  min-width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 30px 0 30px;
+}
+@media (max-width: 500px) {
+  .myForm {
+      min-width: 90%;
+  }
+}
+.font-34 {
+  font-size: 34px !important;
+}
+.font-24 {
+  font-size: 24px !important;
+}
+.font-15 {
+  font-size: 15px !important;
+}
+.font-14 {
+  font-size: 14px !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.color-azul {
+  color: #0765e9 !important;
+}
+.btn-iniciar-sesion {
+  height: 50px !important;
+  width: 100%;
+  border-radius: 5px;
+  color:#F1F3F6 !important;
+  background-color: #48648b !important;
+  box-shadow: 0 12px 16px 0 rgba(229, 232, 238, 0.178),0 17px 50px 0 rgba(230, 233, 240, 0.124) !important;
+}
