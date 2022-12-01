@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', (event) => {
   const { userAgent } = navigator;
-  if(userAgent.match(/chrome|chromium|crios/i) || userAgent.match(/firefox|fxios/i)) {
+  if (userAgent.match(/chrome|chromium|crios/i) || userAgent.match(/firefox|fxios/i)) {
     console.log('Versión 1.0.0');
     getHash();
   } else {
@@ -26,23 +26,23 @@ const getHash = async () => {
   let linkSidenav = document.querySelectorAll('.menu-sidenav');
   let content = $('#allContent');
   content.html('<div class="spinner-border color-green" style="width: 6rem; height: 6rem;" role="status"></div>').addClass('mt-5 text-center');
-  for(let index = 0; index < linkColor.length; index++) {
+  for (let index = 0; index < linkColor.length; index++) {
     let valueFor = linkColor[index];
-    if(valueFor.getAttribute('href') === location.hash) {
+    if (valueFor.getAttribute('href') === location.hash) {
       valueFor.classList.add('fondo-naranja');
     } else {
       valueFor.classList.remove('fondo-naranja');
     }
   }
-  for(let index = 0; index < linkSidenav.length; index++) {
+  for (let index = 0; index < linkSidenav.length; index++) {
     let valueFor = linkSidenav[index];
-    if(valueFor.dataset.href === location.hash) {
+    if (valueFor.dataset.href === location.hash) {
       valueFor.classList.add('fondo-naranja');
     } else {
       valueFor.classList.remove('fondo-naranja');
     }
   }
-  switch(location.hash) {
+  switch (location.hash) {
     case '#dashboard':
       renderDashboard(content);
       break;
@@ -73,7 +73,7 @@ const requestAxios = async (method, url, data, withFile = false) => {
       },
       data
     }
-    if(withFile === false) delete objeto.headers['content-type'];
+    if (withFile === false) delete objeto.headers['content-type'];
     const peticion = await axios(objeto);
     return peticion.data;
   } catch (error) {
@@ -298,23 +298,13 @@ const renderClientes = async (divContent) => {
   </div>
   <div class="col-10">
   <span class="fw-semibold fs-5">Aluguesa</span>
-  </div>
-  <div class="row ">
-  <div class="col-12">
-  <div class="row">
-          <div class="col-8">
-          <span>Correo electrónico:</span>
+  <br>
+  <span>Correo electrónico:</span>
           <span class="color-negro fw-normal fs-6">ejemplo@mail.com</span>
-          </div>
-          <div class="col-4">asdf</div>
-          <div class="col-12  pe-2">
+          <br>
           <span>Teléfono:</span>
           <span class="color-negro fw-normal fs-6">879-654-279</span>
-          </div>
-        </div>
   </div>
-  </div>
-
   </div>
   
 <!--Domicilios-->
@@ -372,8 +362,11 @@ const renderClientes = async (divContent) => {
       <h2>Personas</h2>
       </div>
       <div class="col-8 text-end">
+      <button class="btn fondo-naranja boton-naranja float-end" data-bs-toggle="modal" data-bs-target="#personaModal">
+      Agregar personas
+    </button>
       <div class="dropdown">
-      <button class="btn fondo-verde boton-verde color-azul dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false">
+      <button class="btn fondo-verde boton-verde color-azul dropdown-toggle border-0 me-3" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="fa-solid fa-sliders px-2"></i> Filtrar 
       </button>
       <ul class="dropdown-menu border-0 py-4">
@@ -382,9 +375,6 @@ const renderClientes = async (divContent) => {
         <li><a class="dropdown-item" href="#">Puesto</a></li>
       </ul>
       </div>
-      <button class="btn fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#personaModal">
-        </i><span>Agregar persona</span>
-      </button>
       </div>
               </div>
                 <!--Tabla personas-->
@@ -784,13 +774,13 @@ const renderClientes = async (divContent) => {
   </div>
 </div>
 `;
-divContent.removeClass('mt-5 text-center').html(html);
-// const getInfo = await requestAxios('GET', 'urlapizifris', {});
-// if(getInfo.code === 200) {
-//     console.log('Todo verde');
-// } else {
-//     console.log('Fallo');
-// }
+  divContent.removeClass('mt-5 text-center').html(html);
+  // const getInfo = await requestAxios('GET', 'urlapizifris', {});
+  // if(getInfo.code === 200) {
+  //     console.log('Todo verde');
+  // } else {
+  //     console.log('Fallo');
+  // }
 };
 
 ////////////////////////
@@ -983,13 +973,13 @@ const renderDemanda = async (divContent) => {
 </div>
 </div>
   `;
-divContent.removeClass('mt-5 text-center').html(html);
-// const getInfo = await requestAxios('GET', 'urlapizifris', {});
-// if(getInfo.code === 200) {
-//     console.log('Todo verde');
-// } else {
-//     console.log('Fallo');
-// }
+  divContent.removeClass('mt-5 text-center').html(html);
+  // const getInfo = await requestAxios('GET', 'urlapizifris', {});
+  // if(getInfo.code === 200) {
+  //     console.log('Todo verde');
+  // } else {
+  //     console.log('Fallo');
+  // }
 };
 
 
@@ -998,7 +988,7 @@ divContent.removeClass('mt-5 text-center').html(html);
 ////////////////////////
 const renderExpedientes = async (divContent) => {
   initiTitle('Expedientes');
-  const html =`
+  const html = `
   <!--Titulo-->
   <div class="bg-white" id="divExpedientes">
   <div id="divExpedientes">
