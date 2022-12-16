@@ -1701,27 +1701,39 @@ const renderBitacora = async (divContent) => {
         <h2>Bitácora Audiencias</h2>
         </div>
           <div class="col-6 text-end">
-          <a class="btn fondo-verde color-verde dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-          <i class="fa-solid fa-sliders px-2"></i>
-          Filtrar por tipo
-          </a>
-          <a class="btn fondo-verde color-verde dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-          <i class="fa-solid fa-sliders px-2"></i>
-          Filtrar
-          </a>
-            <button  class="btn fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#agregarTarea">
-                Agregar tarea
-            </button>
+          <ul class="nav nav-pills mt-3 justify-content-end" id="pills-tab">
+            <li class="nav-item dropdown">
+    <a class="nav-link nav-verde  dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+    <i class="fa-solid fa-sliders px-2"></i>
+    Filtrar por tipo
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Expediente personal</a></li>
+      <li><a class="dropdown-item" href="#">Expediente de seguridad social</a></li>
+      <li><a class="dropdown-item" href="#">Expediente de personalidad</a></li>
+    </ul>
+  </li>
+            <li class="nav-item dropdown">
+    <a class="nav-link  nav-verde dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+    <i class="fa-solid fa-sliders px-2"></i>
+    Filtrar
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Expediente personal</a></li>
+      <li><a class="dropdown-item" href="#">Expediente de seguridad social</a></li>
+      <li><a class="dropdown-item" href="#">Expediente de personalidad</a></li>
+    </ul>
+  </li>    
+  <li class="nav-item" role="presentation">
+  <button class="nav-link active"  data-bs-toggle="modal" data-bs-target="#agregarTarea" aria-controls="pills-contact" aria-selected="false">Agregar tarea</button>
+</li>
+</ul>
         </div>
+        <div class="row">
+        <div class="col-4 mb-3">
+        <span class="badge fondo-gris fs-6">Semana del 1 al 7 de Diciembre 2021</span>
         </div>
-        <div class="row px-5 text-center">
-        <div class="col-4 fondo-gris rounded mt-2">
-        <h6>Semana del 1 al 7 de Diciembre 2021</h6>
-        </div>
-        </div>
-    
-        <!--Tabs abajo-->
-        
+        </div>    
                           <hr class="mb-5">
                           <div class"table-responsive">
                           <div class="table-responsive py-4">
@@ -1812,7 +1824,6 @@ const renderBitacora = async (divContent) => {
   </div> 
                           </div>
                           </div>
-                        
 
 
 

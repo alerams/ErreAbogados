@@ -226,6 +226,11 @@
   background-color: #fcfcfc !important;
   color:#536B8C;
 }
+.nav-verde{
+  margin-left: 10px;
+  background-color: #B3E5AB !important;
+  color:#0A2A3A;
+}
 .auto-height{
   min-height: 500px !important;
   height: auto !important;
