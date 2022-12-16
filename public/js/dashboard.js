@@ -1721,39 +1721,7 @@ const renderBitacora = async (divContent) => {
         </div>
     
         <!--Tabs abajo-->
-        <div class="end">
-        <div class="row px-5">
-          <div class="col-12 text-end">
-            <ul class="nav nav-pills mt-3" id="pills-tab">
-            <li class="nav-item dropdown">
-    <a class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-    <i class="fa-solid fa-sliders px-2"></i>
-    Filtrar por tipo
-    </a>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Expediente personal</a></li>
-      <li><a class="dropdown-item" href="#">Expediente de seguridad social</a></li>
-      <li><a class="dropdown-item" href="#">Expediente de personalidad</a></li>
-    </ul>
-  </li>
-            <li class="nav-item dropdown">
-    <a class="nav-link  end dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-    <i class="fa-solid fa-sliders px-2"></i>
-    Filtrar
-    </a>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Expediente personal</a></li>
-      <li><a class="dropdown-item" href="#">Expediente de seguridad social</a></li>
-      <li><a class="dropdown-item" href="#">Expediente de personalidad</a></li>
-    </ul>
-  </li>    
-  <li class="nav-item" role="presentation">
-  <button class="nav-link active"  data-bs-toggle="modal" data-bs-target="#agregarTarea" aria-controls="pills-contact" aria-selected="false">Agregar tarea</button>
-</li>
-                        </ul>
-                        </div>
-                        </div>
-                        </div>
+        
                           <hr class="mb-5">
                           <div class"table-responsive">
                           <div class="table-responsive py-4">
