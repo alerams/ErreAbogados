@@ -1,7 +1,10 @@
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener("DOMContentLoaded", (event) => {
   const { userAgent } = navigator;
-  if (userAgent.match(/chrome|chromium|crios/i) || userAgent.match(/firefox|fxios/i)) {
-    console.log('Versión 1.0.0');
+  if (
+    userAgent.match(/chrome|chromium|crios/i) ||
+    userAgent.match(/firefox|fxios/i)
+  ) {
+    console.log("Versión 1.0.0");
     getHash();
   } else {
     logout();
@@ -10,52 +13,57 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 const logout = () => {
   //localStorage.removeItem('tokenErre');
-  location.href = 'index.html';
+  location.href = "index.html";
 };
 
-const initTooltips = (tooltipName) => {
-  const tooltipTriggerList = document.querySelectorAll(`[data-bs-toggle="${tooltipName}"]`);
-  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-};
-
-const initiTitle = (title) => document.title = title;
+const initiTitle = (title) => (document.title = title);
 
 const getHash = async () => {
   document.documentElement.scrollTop = 0;
-  let linkColor = document.querySelectorAll('.menu-links');
-  let linkSidenav = document.querySelectorAll('.menu-sidenav');
-  let content = $('#allContent');
-  content.html('<div class="spinner-border color-green" style="width: 6rem; height: 6rem;" role="status"></div>').addClass('mt-5 text-center');
+  let linkColor = document.querySelectorAll(".menu-links");
+  let linkSidenav = document.querySelectorAll(".menu-sidenav");
+  let content = $("#allContent");
+  content
+    .html(
+      '<div class="spinner-border color-green" style="width: 6rem; height: 6rem;" role="status"></div>'
+    )
+    .addClass("mt-5 text-center");
   for (let index = 0; index < linkColor.length; index++) {
     let valueFor = linkColor[index];
-    if (valueFor.getAttribute('href') === location.hash) {
-      valueFor.classList.add('fondo-naranja');
+    if (valueFor.getAttribute("href") === location.hash) {
+      valueFor.classList.add("fondo-naranja");
     } else {
-      valueFor.classList.remove('fondo-naranja');
+      valueFor.classList.remove("fondo-naranja");
     }
   }
   for (let index = 0; index < linkSidenav.length; index++) {
     let valueFor = linkSidenav[index];
     if (valueFor.dataset.href === location.hash) {
-      valueFor.classList.add('fondo-naranja');
+      valueFor.classList.add("fondo-naranja");
     } else {
-      valueFor.classList.remove('fondo-naranja');
+      valueFor.classList.remove("fondo-naranja");
     }
   }
   switch (location.hash) {
-    case '#dashboard':
+    case "#dashboard":
       renderDashboard(content);
       break;
-    case '#clientes':
+    case "#clientes":
       renderClientes(content);
       break;
-    case '#demanda':
+    case "#demanda":
       renderDemanda(content);
       break;
-    case '#expedientes':
+    case "#expedientes":
       renderExpedientes(content);
       break;
-    case '#DetalleClientes':
+    case "#DetalleClientes":
+      break;
+    case "#documentos":
+      renderDocumentos(content);
+      break;
+    case "#bitacora":
+      renderBitacora(content);
       break;
     default:
       logout();
@@ -68,12 +76,12 @@ const requestAxios = async (method, url, data, withFile = false) => {
       method,
       url,
       headers: {
-        'Authorization': localStorage.getItem('tokenErre'),
-        'content-type': 'multipart/form-data'
+        Authorization: localStorage.getItem("tokenErre"),
+        "content-type": "multipart/form-data",
       },
-      data
-    }
-    if (withFile === false) delete objeto.headers['content-type'];
+      data,
+    };
+    if (withFile === false) delete objeto.headers["content-type"];
     const peticion = await axios(objeto);
     return peticion.data;
   } catch (error) {
@@ -82,15 +90,15 @@ const requestAxios = async (method, url, data, withFile = false) => {
 };
 
 const showDetalle = (idDivMostrar, idDivOcultar) => {
-  $(`#${idDivMostrar}`).removeClass('d-none');
-  $(`#${idDivOcultar}`).addClass('d-none');
+  $(`#${idDivMostrar}`).removeClass("d-none");
+  $(`#${idDivOcultar}`).addClass("d-none");
 };
 
 ////////////////////////
 ///// DASHBOARD
 ////////////////////////
 const renderDashboard = async (divContent) => {
-  initiTitle('Dashboard');
+  initiTitle("Dashboard");
   const html = `
   <div class="row">
     <div class="col-12 text-end">
@@ -185,7 +193,7 @@ const renderDashboard = async (divContent) => {
       </div>
     </div>
   </div>`;
-  divContent.removeClass('mt-5 text-center').html(html);
+  divContent.removeClass("mt-5 text-center").html(html);
   // const getInfo = await requestAxios('GET', 'urlapizifris', {});
   // if(getInfo.code === 200) {
   //     console.log('Todo verde');
@@ -198,7 +206,7 @@ const renderDashboard = async (divContent) => {
 ///// CLIENTES
 ////////////////////////
 const renderClientes = async (divContent) => {
-  initiTitle('Clientes');
+  initiTitle("Clientes");
   const html = `
   <div class="bg-white" id="divContenidoCliente">
     <div class="row px-5 pt-5">
@@ -206,7 +214,7 @@ const renderClientes = async (divContent) => {
         <h2>Clientes</h2>
       </div>
       <div class="col-6 text-end">
-        <button class="btn fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button  class="btn fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#agregarCliente">
           Agregar nuevo
         </button>
       </div>
@@ -277,94 +285,96 @@ const renderClientes = async (divContent) => {
   </div>
 
   <!--Detalle Cliente-->
-
-  <div id="detalleCliente" class="mb-5 px-3 d-none">
-  <div class="bg-white">
-  <div class="row px-5 pt-5 mt-5">
-  <div class="col-6">
-  <h2>Cliente</h2>
-  </div>
-  <div class="col-6 text-end">
-  <button class="btn px-5 fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Editar
-  </button>
-  </div>
-  </div>
-  <hr class="mb-5">
-
-  <div class="row px-5">
-  <div class="col-2 fondo-gris rounded px-4 py-4 text-center">
-  <h2 class="py-3 fw-semibold">AL</h2>
-  </div>
-  <div class="col-10">
-  <span class="fw-semibold fs-5">Aluguesa</span>
-  <br>
-  <span>Correo electrónico:</span>
-          <span class="color-negro fw-normal fs-6">ejemplo@mail.com</span>
-          <br>
-          <span>Teléfono:</span>
-          <span class="color-negro fw-normal fs-6">879-654-279</span>
-  </div>
-  </div>
   
-<!--Domicilios-->
-<div class="row px-5 pt-5 mb-5">
-<div class="col-6">
-  <h3>Domicilios</h3>
-</div>
-<div class="col-6 text-end">
-  <button class="btn fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#domicilioModal">
-    Agregar domicilio
-  </button>
-</div>
-</div>
-  <!--Tabla Domicilios-->
-  <div class="table-responsive">
-  <table class="table text-center textos">
-    <thead>
-      <tr>
-        <th style="min-width:330px; width:33%">Domicilio</th>
-        <th style="min-width:330px; width:33%">Tipo de domicilio</th>
-        <th style="min-width:330px; width:33%">Opciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="py-3">Aluguesa</td>
-        <td class="py-3">5879</td>
-        <td class="py-3"><button class="btn gap-2 boton-azul fondo-azul2 text-white">
-          <i class="fa-solid fa-pen px-2"></i><span>Editar</span>
-        </button></td>
-      </tr>
-      <tr>
-        <td class="py-3">Aluguesa</td>
-        <td class="py-3">4579</td>
-        <td class="py-3"><button class="btn gap-2 boton-azul fondo-azul2 text-white">
-          <i class="fa-solid fa-pen px-2"></i><span>Editar</span>
-        </button></td>
-      </tr>
-      <tr>
-        <td class="py-3">Aluguesa</td>
-        <td class="py-3">3248</td>
-        <td class="py-3"><button class="btn boton-azul  gap-2 fondo-azul2 text-white">
-          <i class="fa-solid fa-pen px-2"></i></i><span>Editar</span>
-        </button></td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-
-<!--Tabla personas-->
-<div class="mt-5 bg-white">
-<!--Personas Titulo-->
-  <div class="row px-5 pt-5 mb-5">
-    <div class="col-4">
-      <h2>Personas</h2>
-      </div>
-      <div class="col-8 text-end">
-      <button class="btn fondo-naranja boton-naranja float-end" data-bs-toggle="modal" data-bs-target="#personaModal">
-      Agregar personas
-    </button>
+  <div id="detalleCliente" class="mb-5 px-3 d-none">
+    <div class="bg-white">
+      <div class="row px-5 pt-5 mt-5">
+        <div class="col-6">
+          <h2>Cliente</h2>
+          </div>
+          <div class="col-6 text-end">
+            <button class="btn px-5 fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#agregarCliente">
+              Editar
+              </button>
+              </div>
+              </div>
+              <hr class="mb-5">
+                <div class="row px-5">
+                  <div class="col-2 fondo-gris rounded px-4 py-4 text-center">
+                    <h2 class="py-3 fw-semibold">AL</h2>
+                    </div>
+                    <div class="col-10">
+                      <span class="fw-semibold fs-5">Aluguesa</span>
+                      <br>
+                      <span>Correo electrónico:</span>
+                      <span class="color-negro fw-normal fs-6">ejemplo@mail.com</span>
+                      <span>Teléfono:</span>
+                      <span class="color-negro fw-normal fs-6">879-654-279</span>
+                      </div>
+                      </div>
+                      
+                      <!--Domicilios-->
+                      <div class="row px-5 pt-5 mb-5">
+                        <div class="col-6">
+                          <h3>Domicilios</h3>
+                          </div>
+                          <div class="col-6 text-end">
+                            <button class="btn fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#domicilioModal">
+                              Agregar domicilio
+                              </button>
+                              </div>
+                              </div>
+                              <!--Tabla Domicilios-->
+                              <div class="table-responsive">
+                                <table class="table text-center textos">
+                                  <thead>
+                                    <tr>
+                                      <th style="min-width:330px; width:33%">Domicilio</th>
+                                      <th style="min-width:330px; width:33%">Tipo de domicilio</th>
+                                      <th style="min-width:330px; width:33%">Opciones</th>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td class="py-3">Aluguesa</td>
+                                          <td class="py-3">5879</td>
+                                          <td class="py-3"><button class="btn gap-2 boton-azul fondo-azul2 text-white">
+                                            <i class="fa-solid fa-pen px-2"></i><span>Editar</span>
+                                            </button>
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                              <td class="py-3">Aluguesa</td>
+                                              <td class="py-3">4579</td>
+                                              <td class="py-3"><button class="btn gap-2 boton-azul fondo-azul2 text-white">
+                                                <i class="fa-solid fa-pen px-2"></i><span>Editar</span>
+                                                </button>
+                                                </td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="py-3">Aluguesa</td>
+                                                  <td class="py-3">3248</td>
+                                                  <td class="py-3">
+                                                    <button class="btn boton-azul  gap-2 fondo-azul2 text-white">
+                                                      <i class="fa-solid fa-pen px-2"></i><span>Editar</span>
+                                                    </button>
+                                                    </td>
+                                                    </tr>
+                                                    </tbody>
+                                                    </table>
+                                                    </div>
+                                                    
+                                                    <!--Tabla personas-->
+                                                    <div class="mt-5 bg-white">
+                                                      <!--Personas Titulo-->
+                                                      <div class="row px-5 pt-5 mb-5">
+                                                        <div class="col-4">
+                                                          <h2>Personas</h2>
+                                                          </div>
+                                                          <div class="col-8 text-end">
+                                                            <button class="btn fondo-naranja boton-naranja float-end" data-bs-toggle="modal" data-bs-target="#personaModal">
+                                                              Agregar persona
+                                                              </button>
       <div class="dropdown">
       <button class="btn fondo-verde boton-verde color-azul dropdown-toggle border-0 me-3" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="fa-solid fa-sliders px-2"></i> Filtrar 
@@ -414,35 +424,35 @@ const renderClientes = async (divContent) => {
                       <td class="py-3">3248</td>
                       <td class="py-3">3248</td>
                       <td class="py-3"><button class="btn boton-azul fondo-azul2 text-white">
-                        <i class="fa-solid fa-pen px-2"></i></i><span>Editar</span>
-                      </button></td>
+                        <i class="fa-solid fa-pen px-2"></i>><span>Editar</span>
+                      </button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
                 </div>
+      
+      <div class="mt-5 bg-white">
+<!--Personas Titulo-->
+  <div class="row px-5 pt-5 mb-5">
+    <div class="col-4">
+      <h2>Trámite / Proceso</h2>
       </div>
-      <div class="mt-5 p-3 bg-white">
-                <!--Tramite Proceso-->
-                <div class="d-flex justify-content-between aligns-items-center mb-5 py-5 px-5">
-                  <div class="d-flex">
-                    <h3>Trámite / Proceso</h3>
-                  </div>
-                <div class="d-grid gap-3 d-md-flex justify-content-md-end">
-                  <div class="dropdown">
-                    <button class="btn py-2 px-3 fondo-verde boton-verde color-azul dropdown-toggle border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fa-solid fa-sliders px-2"></i> Filtrar 
-                    </button>
-                    <ul class="dropdown-menu border-0 py-4">
-                      <li><a class="dropdown-item" href="#">Nombre</a></li>
-                      <li><a class="dropdown-item" href="#">Correo electrónico</a></li>
-                      <li><a class="dropdown-item" href="#">Puesto</a></li>
-                    </ul>
-                  </div>
-                <button type="button" class="btn gap-2 py-2 fondo-naranja boton-naranja text-white" data-bs-toggle="modal" data-bs-target="#tramiteModal">
-                </i><span>Agregar expediente</span>
-              </button>
+      <div class="col-8 text-end">
+      <button class="btn fondo-naranja boton-naranja float-end" data-bs-toggle="modal" data-bs-target="#tramiteModal">
+      Agregar trámite
+    </button>
+    <div class="dropdown">
+    <button class="btn py-2 px-3 fondo-verde boton-verde color-azul dropdown-toggle border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-sliders px-2"></i> Filtrar 
+    </button>
+                  <ul class="dropdown-menu border-0 py-4">
+                    <li><a class="dropdown-item" href="#">Nombre</a></li>
+                    <li><a class="dropdown-item" href="#">Correo electrónico</a></li>
+                    <li><a class="dropdown-item" href="#">Puesto</a></li>
+                  </ul>
                 </div>
-              </div>              
+      </div>
                 <!--Tabla Tramite-->
                 <div class="table-responsive">
                 <table class="table text-center textos">
@@ -480,12 +490,13 @@ const renderClientes = async (divContent) => {
       </div>
 
       <!--Modal Agregar Cliente-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+  <div class="modal textos fade" id="agregarCliente" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Cliente o prospecto</h1>
-          <button class="btn-close" data-bs-dismiss="modal"></button>
+          <button class="btn-close" data-bs-dismiss="modal">
+          </button>
         </div>
         <div class="modal-body px-4">
           <h5>Cliente o prospecto</h5>
@@ -573,7 +584,7 @@ const renderClientes = async (divContent) => {
           </div>
           <div class="col-md-6 mb-3">
             <div class="form-outline mb-4">
-              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Domicilio</label>
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2">Domicilio</label>
               <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio"/>
             </div>
           </div>
@@ -587,7 +598,7 @@ const renderClientes = async (divContent) => {
   </div>
 </div>
 
-<!-- Modal persona -->
+                  <!-- Modal persona -->
 <div class="modal textos fade" id="personaModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
     <div class="modal-content">
@@ -648,7 +659,7 @@ const renderClientes = async (divContent) => {
   </div>
 </div>
 
-<!-- Modal Agregar Persona-->
+<!-- Modal Agregar Trámite-->
 
 <div class="modal textos fade" id="tramiteModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
@@ -773,8 +784,10 @@ const renderClientes = async (divContent) => {
     </div>
   </div>
 </div>
+</div>
+</div>
 `;
-  divContent.removeClass('mt-5 text-center').html(html);
+  divContent.removeClass("mt-5 text-center").html(html);
   // const getInfo = await requestAxios('GET', 'urlapizifris', {});
   // if(getInfo.code === 200) {
   //     console.log('Todo verde');
@@ -787,13 +800,11 @@ const renderClientes = async (divContent) => {
 ///// DETALLE
 ////////////////////////
 
-
-
 ////////////////////////
 ///// DEMANDA
 ////////////////////////
 const renderDemanda = async (divContent) => {
-  initiTitle('Demanda');
+  initiTitle("Demanda");
   const html = `
   <div class="bg-white mt-4 container-fluid p-3">
   <div class="d-flex justify-content-between aligns-items-center mb-5 py-5 px-5 border-bottom">
@@ -973,7 +984,7 @@ const renderDemanda = async (divContent) => {
 </div>
 </div>
   `;
-  divContent.removeClass('mt-5 text-center').html(html);
+  divContent.removeClass("mt-5 text-center").html(html);
   // const getInfo = await requestAxios('GET', 'urlapizifris', {});
   // if(getInfo.code === 200) {
   //     console.log('Todo verde');
@@ -982,12 +993,11 @@ const renderDemanda = async (divContent) => {
   // }
 };
 
-
 ////////////////////////
 ///// EXPEDIENTES
 ////////////////////////
 const renderExpedientes = async (divContent) => {
-  initiTitle('Expedientes');
+  initiTitle("Expedientes");
   const html = `
   <!--Titulo-->
   <div class="bg-white" id="divExpedientes">
@@ -1666,7 +1676,473 @@ const renderExpedientes = async (divContent) => {
 
 
   `;
-  divContent.removeClass('mt-5 text-center').html(html);
+  divContent.removeClass("mt-5 text-center").html(html);
+  // const getInfo = await requestAxios('GET', 'urlapizifris', {});
+  // if(getInfo.code === 200) {
+  //     console.log('Todo verde');
+  // } else {
+  //     console.log('Fallo');
+  // }
+};
+
+////////////////////////
+///// BITÁCORA
+////////////////////////
+
+const renderBitacora = async (divContent) => {
+  initiTitle("Bitácora");
+  const html = `
+  <!--Titulo-->
+  <div class="bg-white">
+    <div id="">
+    <!--Tabs end-->
+      <div class="row px-5 pt-5">
+        <div class="col-6">
+        <h2>Bitácora Audiencias</h2>
+        </div>
+          <div class="col-6 text-end">
+          <a class="btn fondo-verde color-verde dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+          <i class="fa-solid fa-sliders px-2"></i>
+          Filtrar por tipo
+          </a>
+          <a class="btn fondo-verde color-verde dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+          <i class="fa-solid fa-sliders px-2"></i>
+          Filtrar
+          </a>
+            <button  class="btn fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#agregarTarea">
+                Agregar tarea
+            </button>
+        </div>
+        </div>
+        <div class="row px-5 text-center">
+        <div class="col-4 fondo-gris rounded mt-2">
+        <h6>Semana del 1 al 7 de Diciembre 2021</h6>
+        </div>
+        </div>
+    
+        <!--Tabs abajo-->
+        <div class="end">
+        <div class="row px-5">
+          <div class="col-12 text-end">
+            <ul class="nav nav-pills mt-3" id="pills-tab">
+            <li class="nav-item dropdown">
+    <a class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+    <i class="fa-solid fa-sliders px-2"></i>
+    Filtrar por tipo
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Expediente personal</a></li>
+      <li><a class="dropdown-item" href="#">Expediente de seguridad social</a></li>
+      <li><a class="dropdown-item" href="#">Expediente de personalidad</a></li>
+    </ul>
+  </li>
+            <li class="nav-item dropdown">
+    <a class="nav-link  end dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+    <i class="fa-solid fa-sliders px-2"></i>
+    Filtrar
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Expediente personal</a></li>
+      <li><a class="dropdown-item" href="#">Expediente de seguridad social</a></li>
+      <li><a class="dropdown-item" href="#">Expediente de personalidad</a></li>
+    </ul>
+  </li>    
+  <li class="nav-item" role="presentation">
+  <button class="nav-link active"  data-bs-toggle="modal" data-bs-target="#agregarTarea" aria-controls="pills-contact" aria-selected="false">Agregar tarea</button>
+</li>
+                        </ul>
+                        </div>
+                        </div>
+                        </div>
+                          <hr class="mb-5">
+                          <div class"table-responsive">
+                          <div class="table-responsive py-4">
+  <table class="table text-center textos mt-4 mb-4">
+    <thead>
+      <tr>
+        <th style="min-width:300px; ">Cliente</th>
+        <th style="min-width:300px; ">Lugar</th>
+        <th style="min-width:200px; ">Junta/Tribunal</th>
+        <th style="min-width:300px; ">Día</th>
+        <th style="min-width:300px; ">Hora</th>
+        <th style="min-width:200px; ">Tipo</th>
+        <th style="min-width:200px; ">Documentos</th>
+        <th style="min-width:200px; ">Oferente</th>
+        <th style="min-width:200px; ">A cargo</th>
+        <th style="min-width:200px; ">Absolvente</th>
+        <th style="min-width:200px; ">Citación</th>
+        <th style="min-width:200px; ">Observaciones</th>
+        <th style="min-width:200px; ">Notas</th>
+        <th style="min-width:200px; ">Atiende</th>
+        <th style="min-width:200px; ">Estatus</th>
+        <th style="min-width:200px; ">Hora inicio</th>
+        <th style="min-width:200px; ">Hora final</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="py-3">Aluguesa</td>
+        <td class="py-3">GDL</td>
+        <td class="py-3">Junta Especial #15</td>
+        <td class="py-3">20/11/2021</td>
+        <td class="py-3">1:00 pm</td>
+        <td class="py-3">Desahogo de pruebas</td>
+        <td class="py-3">Loremp ipsum</td>
+        <td class="py-3">Loremp ipsum</td>
+        <td class="py-3">Loremp ipsum</td>
+        <td class="py-3">Loremp ipsum</td>
+        <td class="py-3">Loremp ipsum</td>
+        <td class="py-3">Observaciones 2</td>
+        <td class="py-3">Notas 2</td>
+        <td class="py-3">DAM</td>
+        <td class="py-3"><a class="btn fondo-naranja2">Traspasar</a></td>
+        <td class="py-3">10:42 am</td>
+        <td class="py-3">02:24 pm</td>
+        
+      </tr>
+      <tr>
+      <td class="py-3">Aluguesa</td>
+        <td class="py-3">GDL</td>
+        <td class="py-3">Junta Especial #15</td>
+        <td class="py-3">20/11/2021</td>
+        <td class="py-3">1:00 pm</td>
+        <td class="py-3">Desahogo de pruebas</td>
+        <td class="py-3">Loremp ipsum</td>
+        <td class="py-3">Loremp ipsum</td>
+        <td class="py-3">Loremp ipsum</td>
+        <td class="py-3">Loremp ipsum</td>
+        <td class="py-3">Loremp ipsum</td>
+        <td class="py-3">Observaciones 2</td>
+        <td class="py-3">Notas 2</td>
+        <td class="py-3"><a class="btn fondo-azul3">Asignar</a></td>
+        <td class="py-3"><a class="btn fondo-rojo">Atendido</a></td>
+        <td class="py-3">10:42 am</td>
+        <td class="py-3">02:24 pm</td>
+      </tr>
+      <tr>
+      <td class="py-3">Aluguesa</td>
+      <td class="py-3>GDL</td>
+      <td class="py-3>GDL</td>
+      <td class="py-3">Junta Especial #15</td>
+      <td class="py-3">20/11/2021</td>
+      <td class="py-3">1:00 pm</td>
+      <td class="py-3">Desahogo de pruebas</td>
+      <td class="py-3">Loremp ipsum</td>
+      <td class="py-3">Loremp ipsum</td>
+      <td class="py-3">Loremp ipsum</td>
+      <td class="py-3">Loremp ipsum</td>
+      <td class="py-3">Loremp ipsum</td>
+      <td class="py-3">Observaciones 2</td>
+      <td class="py-3">Notas 2</td>
+      <td class="py-3"><a class="btn fondo-azul3">Asignar</a></td>
+      <td class="py-3"><a class="btn fondo-verde2">Atendido</a></td>
+      <td class="py-3">10:42 am</td>
+      <td class="py-3">02:24 pm</td>
+      </tr>
+    </tbody>
+  </table>
+  </div> 
+                          </div>
+                          </div>
+                          <button type="button" class="btn btn-secondary"
+        data-bs-toggle="tooltip" data-bs-placement="top"
+        data-bs-custom-class="custom-tooltip"
+        data-bs-title="This top tooltip is themed via CSS variables.">
+  Custom tooltip 
+</button>
+
+
+
+                          <!--Modal Agregar Tarea-->
+<div class="modal textos fade" id="agregarTarea" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Audiencias</h1>
+        <button class="btn-close" data-bs-dismiss="modal">
+        </button>
+      </div>
+      <div class="modal-body px-4">
+        <div class="row mb-5 py-3">
+        <div class="col-md-4 mb-3">
+        <label class="form-label fw-normal color-negro">Cliente o prospecto</label>
+        <select class="form-select">
+          <option selected disabled>Seleccione una opción</option>
+          <option value="1">Aluguesa</option>
+          <option value="2">Alueguesa física</option>
+          <option value="3">Aluguesa</option>
+        </select>
+      </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Expediente</label>
+            <select class="form-select">
+              <option selected disabled>Seleccione una opción</option>
+              <option value="1">Cliente</option>
+              <option value="2">Persona física</option>
+              <option value="3">Persona Moral</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Hora y fecha</label>
+            <select class="form-select">
+              <option selected disabled>Seleccione hora y fecha</option>
+              <option value="1">Cliente</option>
+              <option value="2">Persona física</option>
+              <option value="3">Persona Moral</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Domicilio de la audiencia</label>
+            <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la audiencia"/>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Tipo de audiencia</label>
+            <select class="form-select">
+              <option selected disabled>Seleccione una opción</option>
+              <option value="1">Opción 1</option>
+              <option value="2">Opción 2</option>
+              <option value="3">Opción 3</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Documentos necesarios</label>
+            <select class="form-select">
+              <option selected disabled>Seleccione una opción</option>
+              <option value="1">Opción 1</option>
+              <option value="2">Opción 2</option>
+              <option value="3">Opción 3</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Oferente</label>
+            <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Oferente"/>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">A cargo</label>
+            <select class="form-select">
+              <option selected disabled>Seleccione una opción</option>
+              <option value="1">Opción 1</option>
+              <option value="2">Opción 3</option>
+              <option value="3">Opción 1</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Absolvente / Tetigos</label>
+            <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Absolvente / Testigos"/>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Citación</label>
+            <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Citación"/>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Observaciones</label>
+            <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Observaciones"/>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Notas</label>
+            <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Notas"/>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Atiende</label>
+            <select class="form-select">
+              <option selected disabled>Seleccione una opción</option>
+              <option value="1">Opción 1</option>
+              <option value="2">Opción 2</option>
+              <option value="3">Opción 3</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+        <button class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn fondo-naranja boton-naranja px-5">Agregar</button>
+      </div>
+</div>
+</div>
+</div>
+
+  `;
+  divContent.removeClass("mt-5 text-center").html(html);
+  // const getInfo = await requestAxios('GET', 'urlapizifris', {});
+  // if(getInfo.code === 200) {
+  //     console.log('Todo verde');
+  // } else {
+  //     console.log('Fallo');
+  // }
+};
+
+////////////////////////
+///// DOCUMENTOS
+////////////////////////
+
+const renderDocumentos = async (divContent) => {
+  initiTitle("Documentos");
+  const html = `
+  <!--Titulo-->
+  <div class="bg-white">
+  <div id="contenidoDocumentos">
+  <div class="row px-5 pt-5">
+      <div class="col-6">
+        <h2>Documentos</h2>
+      </div>
+      <div class="col-6 text-end">
+        <button  class="btn fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#agregarDocumento">
+          Nuevo documento
+        </button>
+      </div>
+    </div>
+  <hr class="mb-5">
+
+  <!-- Tabs -->
+<div class="row px-5 mt-4 text-end">
+<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+<li class="nav-item dropdown">
+    <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Expediente</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Expediente personal</a></li>
+      <li><a class="dropdown-item" href="#">Expediente de seguridad social</a></li>
+      <li><a class="dropdown-item" href="#">Expediente de personalidad</a></li>
+    </ul>
+  </li>
+<li class="nav-item" role="presentation">
+  <button class="nav-link" id="pills-tramites-tab" data-bs-toggle="pill" data-bs-target="#pills-tramites" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Trámites</button>
+</li>
+<li class="nav-item" role="presentation">
+  <button class="nav-link" id="pills-escritos-tab" data-bs-toggle="pill" data-bs-target="#pills-escritos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Escritos</button>
+</li>
+<li class="nav-item" role="presentation">
+  <button class="nav-link" id="pills-varios-tab" data-bs-toggle="pill" data-bs-target="#pills-varios" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Varios</button>
+</li>
+
+</ul>
+</div>
+<div class="col-6 text-end">
+<div class="dropdown">
+          <button class="btn color-negro px-3 py-2 fondo-verde boton-verde sombra1 color-azul dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-sliders px-2"></i>
+            Filtrar
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end border-0 py-4">
+            <li><a class="dropdown-item" href="#">Expediente personal</a></li>
+            <li><a class="dropdown-item" href="#">Expediente de seguridad social</a></li>
+            <li><a class="dropdown-item" href="#">Expediente de personalidad</a></li>
+          </ul>
+        </div>
+</div>
+</div>
+<div class="table-responsive mb-5">
+<table class="table text-center textos mt-5">
+        <thead>
+          <tr>
+            <th style="min-width:300px; width:40%">Nombre</th>
+            <th style="min-width:200px; width:25%">Número de expediente</th>
+            <th style="min-width:200px; width:25%">Fecha inicio</th>
+            <th style="min-width:200px; width:25%">Fecha final</th>
+            <th style="min-width:120px; width:10%">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-3">Contrato</td>
+            <td class="py-3">1212/2020/14-A</td>
+            <td class="py-3">01/02/2018</td>
+            <td class="py-3">Sin fecha</td>
+            <td>
+              <button class="btn boton-azul fondo-azul2 text-white" onclick="showDetalle('detalleCliente','divContenidoCliente')">
+                <i class="fa-solid fa-eye me-2"></i>
+                Ver
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-3">Recibo de nómina</td>
+            <td class="py-3">1212/2020/14-A</td>
+            <td class="py-3">01/02/2018</td>
+            <td class="py-3">15/02/2018</td>
+            <td>
+              <button class="btn boton-azul fondo-azul2 text-white" onclick="showDetalle('detalleCliente','divContenidoCliente')">
+                <i class="fa-solid fa-eye me-2"></i>
+                Ver
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-3">Contrato individual de trabajo</td>
+            <td class="py-3">1212/2020/14-A</td>
+            <td class="py-3">01/02/2018</td>
+            <td class="py-3">15/02/2018</td>
+            <td>
+              <button class="btn boton-azul fondo-azul2 text-white" onclick="showDetalle('detalleCliente','divContenidoCliente')">
+                <i class="fa-solid fa-eye me-2"></i>
+                Ver
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+</div>
+</div>
+
+<!--Modal Agregar documento-->
+<div class="modal textos fade" id="agregarDocumento" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Carga de documentos</h1>
+        <button class="btn-close" data-bs-dismiss="modal">
+        </button>
+      </div>
+      <div class="modal-body px-4">
+        <span>Seleccione la categoría y despues el archivo a subir</span>
+        <div class="row mb-5 py-3">
+        <div class="col-md-4 mb-3">
+        <label class="form-label fw-normal color-negro">Categoría</label>
+        <select class="form-select">
+          <option selected disabled>Seleccione una opción</option>
+          <option value="1">Cliente</option>
+          <option value="2">Persona física</option>
+          <option value="3">Persona Moral</option>
+        </select>
+      </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Subcategoría</label>
+            <select class="form-select">
+              <option selected disabled>Seleccione una opción</option>
+              <option value="1">Cliente</option>
+              <option value="2">Persona física</option>
+              <option value="3">Persona Moral</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-normal color-negro">Tipo de expediente</label>
+            <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Tipo de expediente"/>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-12 mb-3 text-center">
+          <h5>Arrastre un archivo o presione aquí para adjuntar</h5>
+          <label >Tamaño máximo permitido</label>
+          <input class="form-control  box py-5 text-center" type="file" id="formFileMultiple" multiple>
+          </div>
+          </div>
+        <div class="row mb-4">
+          <div class="col-md-12 mb-3">
+          <label for="floatingTextarea2" >Observaciones</label>
+          <textarea class="form-control" placeholder="Observaciones" id="floatingTextarea2" style="height: 100px"></textarea>
+          </div>
+          </div>
+      <div class="modal-footer">
+        <button class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn fondo-naranja boton-naranja px-5">Agregar</button>
+      </div>
+</div>
+</div>
+</div>
+</div>
+  `;
+  divContent.removeClass("mt-5 text-center").html(html);
   // const getInfo = await requestAxios('GET', 'urlapizifris', {});
   // if(getInfo.code === 200) {
   //     console.log('Todo verde');

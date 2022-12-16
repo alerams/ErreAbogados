@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Dashboard</title>
+  </head>
+  <body class="fondo-gris">
+    <div class="bg-white" id="divContenidoCliente">
+      <div class="row px-5 pt-5">
+        <div class="col-6">
+          <h2>Clientes</h2>
+        </div>
+        <div class="col-6 text-end">
+          <button
+            class="btn fondo-naranja boton-naranja"
+            data-bs-toggle="modal"
+            data-bs-target="#agregarCliente"
+          >
+            Agregar nuevo
+          </button>
+        </div>
+      </div>
+      <hr class="mb-5" />
+      <div class="row pe-5 mb-5">
+        <div class="col-12 text-end">
+          <div class="dropdown">
+            <button
+              class="btn color-negro px-3 py-2 fondo-verde boton-verde sombra1 color-azul dropdown-toggle border-0"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-sliders px-2"></i>
+              Filtrar
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end border-0 py-4">
+              <li><a class="dropdown-item" href="#">Cliente</a></li>
+              <li><a class="dropdown-item" href="#">Procesos</a></li>
+              <li><a class="dropdown-item" href="#">Procesos inactivos</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table text-center textos">
+          <thead>
+            <tr>
+              <th style="min-width: 300px; width: 40%">Cliente</th>
+              <th style="min-width: 200px; width: 25%">Trámite / Procesos</th>
+              <th style="min-width: 200px; width: 25%">
+                Tramites/Procesos inactivos
+              </th>
+              <th style="min-width: 120px; width: 10%">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-3">Aluguesa</td>
+              <td class="py-3">5879</td>
+              <td class="py-3">5879</td>
+              <td>
+                <button
+                  class="btn boton-azul fondo-azul2 text-white"
+                  onclick="showDetalle('detalleCliente','divContenidoCliente')"
+                >
+                  <i class="fa-solid fa-eye me-2"></i>
+                  Ver
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-3">Aluguesa</td>
+              <td class="py-3">5879</td>
+              <td class="py-3">5879</td>
+              <td>
+                <button
+                  class="btn boton-azul fondo-azul2 text-white"
+                  onclick="showDetalle('detalleCliente','divContenidoCliente')"
+                >
+                  <i class="fa-solid fa-eye me-2"></i>
+                  Ver
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-3">Aluguesa</td>
+              <td class="py-3">5879</td>
+              <td class="py-3">5879</td>
+              <td>
+                <button
+                  class="btn boton-azul fondo-azul2 text-white"
+                  onclick="showDetalle('detalleCliente','divContenidoCliente')"
+                >
+                  <i class="fa-solid fa-eye me-2"></i>
+                  Ver
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="jquery/jquery-3.6.1.slim.min.js"></script>
+    <script src="axios/axios.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
