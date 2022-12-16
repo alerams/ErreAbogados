@@ -87,6 +87,11 @@
   background-color: #48648b;
   
 }
+.fondo-azul3:hover{
+  color:#F1F3F6;
+  background-color: #48648b;
+  
+}
 .boton-verde:hover{
   color:#0A2A3A;
   background-color: #9ee793;
@@ -230,6 +235,11 @@
   margin-left: 10px;
   background-color: #B3E5AB !important;
   color:#0A2A3A;
+}
+.nav-verde:hover{
+  color:#0A2A3A !important;
+  background-color: #9ee793 !important;
+  
 }
 .auto-height{
   min-height: 500px !important;

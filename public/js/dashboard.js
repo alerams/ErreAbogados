@@ -1775,7 +1775,7 @@ const renderBitacora = async (divContent) => {
         <td class="py-3">Observaciones 2</td>
         <td class="py-3">Notas 2</td>
         <td class="py-3">DAM</td>
-        <td class="py-3"><a class="btn fondo-naranja2">Traspasar</a></td>
+        <td class="py-3"><span class="badge fondo-naranja2">Traspasar</span></td>
         <td class="py-3">10:42 am</td>
         <td class="py-3">02:24 pm</td>
         
@@ -1795,7 +1795,7 @@ const renderBitacora = async (divContent) => {
         <td class="py-3">Observaciones 2</td>
         <td class="py-3">Notas 2</td>
         <td class="py-3"><a class="btn fondo-azul3">Asignar</a></td>
-        <td class="py-3"><a class="btn fondo-rojo">Atendido</a></td>
+        <td class="py-3"><span class="badge fondo-verde2">Atendido</span></td>
         <td class="py-3">10:42 am</td>
         <td class="py-3">02:24 pm</td>
       </tr>
@@ -1815,7 +1815,7 @@ const renderBitacora = async (divContent) => {
       <td class="py-3">Observaciones 2</td>
       <td class="py-3">Notas 2</td>
       <td class="py-3"><a class="btn fondo-azul3">Asignar</a></td>
-      <td class="py-3"><a class="btn fondo-verde2">Atendido</a></td>
+      <td class="py-3"><span class="badge fondo-rojo">Cancelado</span></td>
       <td class="py-3">10:42 am</td>
       <td class="py-3">02:24 pm</td>
       </tr>
