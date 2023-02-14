@@ -98,7 +98,7 @@ const getHash = async () => {
       break;
     case "#DetalleClientes":
       break;
-    case "#docu":
+    case "#ident":
       break;
     case "#documentos":
       renderDocumentos(content);
@@ -248,15 +248,15 @@ const renderDashboard = async (divContent) => {
 ////////////////////////
 const renderClientes = async (divContent) => {
   initiTitle("Clientes");
-  const html =`    
+  const html =`
   <div class="bg-white" id="divContenidoCliente">
     <div class="row px-5 pt-5">
       <div class="col-6">
         <h2>Clientes</h2>
-      </div>
-      <div class="col-6 text-end">
-        <button  class="btn fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#agregarCliente">
-          Agregar nuevo
+        </div>
+        <div class="col-6 text-end">
+          <button  class="btn fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#agregarCliente">
+            Agregar nuevo
         </button>
       </div>
     </div>
@@ -324,509 +324,516 @@ const renderClientes = async (divContent) => {
       </table>
     </div>
     </div>
-    <!--Detalle Cliente-->
+    <!------------------------Detalle Cliente----------------------->
     <div id="detalleCliente" class="mb-5 px-3 d-none">
       <div class="bg-white">
         <div class="row px-5 pt-5 mt-5">
           <div class="col-6">
             <h2>Cliente</h2>
+          </div>
+          <div class="col-6 text-end">
+            <button class="btn px-5 fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#agregarCliente">
+              Editar
+            </button>
+          </div>
+        </div>
+        <hr class="mb-5">
+        <div class="row px-5">
+          <div class="col-2 fondo-gris rounded px-4 py-4 text-center">
+            <h2 class="py-3 fw-semibold">AL</h2>
+          </div>
+          <div class="col-10">
+            <span class="fw-semibold fs-5">Aluguesa</span>
+            <br>
+            <span>Correo electrónico:</span>
+            <span class="color-negro fw-normal fs-6">ejemplo@mail.com</span>
+            <span>Teléfono:</span>
+            <span class="color-negro fw-normal fs-6">879-654-279</span>
+          </div>
+        </div>
+        <!-------------------------- Sección Domicilios------------------->
+        <div class="row px-5 pt-5 mb-5">
+          <div class="col-6">
+            <h3>Domicilios</h3>
+          </div>
+          <div class="col-6 text-end">
+            <button class="btn  fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#domicilioModal">
+              Agregar domicilio
+            </button>
+          </div>
+        </div>
+        <!--Tabla Domicilios-->
+        <div class="table-responsive">
+          <table class="table text-center textos">
+            <thead>
+              <tr>
+                <th style="min-width:330px; width:33%">Domicilio</th>
+                <th style="min-width:330px; width:33%">Tipo de domicilio</th>
+                <th style="min-width:330px; width:33%">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-3">Aluguesa</td>
+                <td class="py-3">5879</td>
+                <td class="py-3">
+                  <button class="btn gap-2 boton-azul fondo-azul2 text-white">
+                    <i class="fa-solid fa-pen px-2"></i>
+                    Editar
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-3">Aluguesa</td>
+                <td class="py-3">4579</td>
+                <td class="py-3">
+                  <button class="btn gap-2 boton-azul fondo-azul2 text-white">
+                    <i class="fa-solid fa-pen px-2"></i>
+                    Editar
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-3">Aluguesa</td>
+                <td class="py-3">3248</td>
+                <td class="py-3">
+                  <button class="btn boton-azul  gap-2 fondo-azul2 text-white">
+                    <i class="fa-solid fa-pen px-2"></i>
+                    Editar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!----------------------------Sección personas----------------------------->
+        <div class="mt-5 bg-white">
+          <!--Personas Titulo-->
+          <div class="row px-5 pt-5 mb-5">
+            <div class="col-4">
+              <h2>Personas</h2>
             </div>
-            <div class="col-6 text-end">
-              <button class="btn px-5 fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#agregarCliente">
-                Editar
+            <div class="col-8 text-end">
+              <button class="btn me-2 fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#personaModal">
+                Agregar persona
+              </button>
+              <div class="dropdown float-end">
+                <button class="btn fondo-verde px-4 boton-verde color-azul dropdown-toggle  me-3" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-sliders px-2"></i>
+                  Filtrar 
                 </button>
-                </div>
-                </div>
-                <hr class="mb-5">
-                  <div class="row px-5">
-                    <div class="col-2 fondo-gris rounded px-4 py-4 text-center">
-                      <h2 class="py-3 fw-semibold">AL</h2>
-                      </div>
-                      <div class="col-10">
-                        <span class="fw-semibold fs-5">Aluguesa</span>
-                        <br>
-                        <span>Correo electrónico:</span>
-                        <span class="color-negro fw-normal fs-6">ejemplo@mail.com</span>
-                        <span>Teléfono:</span>
-                        <span class="color-negro fw-normal fs-6">879-654-279</span>
-                        </div>
-                        </div>
-                        <!-- Sección Domicilios-->
-                        <div class="row px-5 pt-5 mb-5">
-                          <div class="col-6">
-                            <h3>Domicilios</h3>
-                            </div>
-                            <div class="col-6 text-end">
-                              <button class="btn  fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#domicilioModal">
-                                Agregar domicilio
-                                </button>
-                                </div>
-                                </div>
-                                <!--Tabla Domicilios-->
-                                <div class="table-responsive">
-                                  <table class="table text-center textos">
-                                    <thead>
-                                      <tr>
-                                        <th style="min-width:330px; width:33%">Domicilio</th>
-                                        <th style="min-width:330px; width:33%">Tipo de domicilio</th>
-                                        <th style="min-width:330px; width:33%">Opciones</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                          <td class="py-3">Aluguesa</td>
-                                          <td class="py-3">5879</td>
-                                          <td class="py-3"><button class="btn gap-2 boton-azul fondo-azul2 text-white">
-                                            <i class="fa-solid fa-pen px-2"></i><span>Editar</span>
-                                            </button>
-                                            </td>
-                                            </tr>
-                                            <tr>
-                                              <td class="py-3">Aluguesa</td>
-                                              <td class="py-3">4579</td>
-                                              <td class="py-3"><button class="btn gap-2 boton-azul fondo-azul2 text-white">
-                                                <i class="fa-solid fa-pen px-2"></i><span>Editar</span>
-                                                </button>
-                                                </td>
-                                                </tr>
-                                                <tr>
-                                                  <td class="py-3">Aluguesa</td>
-                                                  <td class="py-3">3248</td>
-                                                  <td class="py-3">
-                                                    <button class="btn boton-azul  gap-2 fondo-azul2 text-white">
-                                                      <i class="fa-solid fa-pen px-2"></i><span>Editar</span>
-                                                    </button>
-                                                    </td>
-                                                    </tr>
-                                                    </tbody>
-                                                    </table>
-                                                    </div>
-                                                    
-                                                    <!--Sección personas-->
-                                                    <div class="mt-5 bg-white">
-                                                      <!--Personas Titulo-->
-                                                      <div class="row px-5 pt-5 mb-5">
-                                                        <div class="col-4">
-                                                          <h2>Personas</h2>
-                                                          </div>
-                                                          <div class="col-8 text-end">
-                                                            <button class="btn me-2 fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#personaModal">
-                                                              Agregar persona
-                                                              </button>
-                                                              <div class="dropdown float-end">
-                                                                <button class="btn fondo-verde px-4 boton-verde color-azul dropdown-toggle  me-3" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                  <i class="fa-solid fa-sliders px-2"></i>Filtrar 
-                                                                  </button>
-                                                                  <ul class="dropdown-menu border-0 py-4">
-                                                                    <li><a class="dropdown-item" href="#">Nombre</a></li>
-                                                                    <li><a class="dropdown-item" href="#">Correo electrónico</a></li>
-                                                                    <li><a class="dropdown-item" href="#">Puesto</a></li>
-                                                                    </ul>
-                                                                    </div>
-                                                                    </div>
-                                                                    </div>
-                                                                    <!--Tabla personas-->
-                                                                    <div class="table-responsive">
-                                                                      <table class="table text-center textos">
-                                                                        <thead>
-                                                                          <tr>
-                                                                            <th style="min-width:300px; width:30%">Nombre</th>
-                                                                            <th style="min-width:300px; width:30%">Correo electrónico</th>
-                                                                            <th style="min-width:200px; width:20%">Telefono</th>
-                                                                            <th style="min-width:100px; width:10%">Puesto</th>
-                                                                            <th style="min-width:200px; width:10%">Opciones</th>
-                                                                            </tr>
-                                                                            </thead>
-                                                                            <tbody>
-                                                                              <tr>
-                                                                                <td class="py-3">Aluguesa</td>
-                                                                                <td class="py-3">correo@ejemplo.com</td>
-                                                                                <td class="py-3">5879</td>
-                                                                                <td class="py-3">5879</td>
-                                                                                <td class="py-3"><button class="btn boton-azul fondo-azul2 text-white">
-                                                                                  <i class="fa-solid fa-pen px-2 "></i>
-                                                                                  <span class="fw-light">Editar</span>
-                                                                                  </button>
-                                                                                  </td>
-                                                                                  </t r>
-                                                                                  <tr>
-                                                                                    <td class="py-3">Aluguesa</td>
-                                                                                    <td class="py-3">correo@ejemplo.com</td>
-                                                                                    <td class="py-3">4579</td>
-                                                                                    <td class="py-3">4579</td>
-                                                                                    <td class="py-3">
-                                                                                      <button class="btn gap-2 boton-azul2 fondo-azul2 text-white">
-                                                                                        <i class="fa-solid fa-pen px-2"></i>
-                                                                                        <span>Editar</span>
-                                                                                        </button>
-                                                                                        </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                          <td class="py-3">Aluguesa</td>
-                                                                                          <td class="py-3">3248</td>
-                                                                                          <td class="py-3">3248</td>
-                                                                                          <td class="py-3">3248</td>
-                                                                                          <td class="py-3"><button class="btn boton-azul fondo-azul2 text-white">
-                                                                                            <i class="fa-solid fa-pen px-2"></i>
-                                                                                            <span>Editar</span>
-                                                                                            </button>
-                                                                                            </td>
-                                                                                            </tr>
-                                                                                            </tbody>
-                                                                                            </table>
-                                                                                            </div>
-                                                                                            </div> 
-                                                                                            <!--Sección Tramite-->
-                                                                                            </hr>
-                                                                                            <div class="mt-5 bg-white">
-                                                                                              <div class="row px-5 pt-5 mb-5">
-                                                                                                <div class="col-4">
-                                                                                                  <h2>Trámite / Proceso</h2>
-                                                                                                  </div>
-                                                                                                  <div class="col-8 text-end">
-                                                                                                    <button class="btn fondo-naranja boton-naranja me-2" data-bs-toggle="modal" data-bs-target="#tramiteModal">
-                                                                                                      Agregar trámite
-                                                                                                      </button>
-                                                                                                      <div class="dropdown float-end">
-                                                                                                        <button class="btn px-3 fondo-verde boton-verde color-azul dropdown-toggle me-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                                                          <i class="fa-solid fa-sliders px-2"></i> Filtrar 
-                                                                                                          </button>
-                                                                                                          <ul class="dropdown-menu border-0 py-4">
-                                                                                                            <li><a class="dropdown-item" href="#">Nombre</a></li>
-                                                                                                            <li><a class="dropdown-item" href="#">Correo electrónico</a></li>
-                                                                                                            <li><a class="dropdown-item" href="#">Puesto</a></li>
-                                                                                                            </ul>
-                                                                                                            </div>
-                                                                                                            </div>
-                                                                                                            </div>
-                                                                                                            <!--Tabla Tramite-->
-                                                                                                            <div class="table-responsive">
-                                                                                                              <table class="table text-center textos">
-                                                                                                                <thead>
-                                                                                                                  <tr>
-                                                                                                                    <th style="min-width:100px; width:10%">Cliente</th>
-                                                                                                                    <th style="min-width:120px; width:10%">Autoridad</th>
-                                                                                                                    <th style="min-width:100px; width:15%">Actores</th>
-                                                                                                                    <th style="min-width:200px; width:15%">Demandado</th>
-                                                                                                                    <th style="min-width:200px; width:10%">Número de expediente</th>
-                                                                                                                    <th style="min-width:100px; width:10%">Importe Total</th>
-                                                                                                                    <th style="min-width:100px; width:10%">Total contingencia</th>
-                                                                                                                    <th style="min-width:100px; width:10%">Estatus</th>
-                                                                                                                    <th style="min-width:120px; width:10%">Opciones</th>
-                                                                                                                    </tr>
-                                                                                                                    </thead>
-                                                                                                                    <tbody>
-                                                                                                                      <tr>
-                                                                                                                        <td class="py-3">Aluguesa</td>
-                                                                                                                        <td class="py-3">Loremp ipsum</td>
-                                                                                                                        <td class="py-3" class="color-naranja fw-semibold">Wesley James y otros</td>
-                                                                                                                        <td class="py-3">Alberta Floys y otros</td>
-                                                                                                                        <td class="py-3">2552/2015/15-A</td>
-                                                                                                                        <td class="py-3">$53,400.00</td>
-                                                                                                                        <td class="py-3">$13,200.00</td>
-                                                                                                                        <td class="py-3"><span class="badge fondo-verde2 fs-6">Activo</span></td>
-                                                                                                                        <td class="py-3"><button class="btn boton-azul  fondo-azul2 text-white">
-                                                                                                                          <i class="fa-solid fa-eye px-2">
-                                                                                                                            </i><span>Ver</span>
-                                                                                                                            </button>
-                                                                                                                            </td>
-                                                                                                                            </tr>
-                                                                                                                            </tbody>
-                                                                                                                            </table>
-                                                                                                                            </div>
-                                                                                                                            </div>
-                                                                                                                            </div>
-                                                                                                                            </div>
-                                                                                                                            <!--Modal Agregar Cliente-->
-                                                                                                                            <div class="modal textos fade" id="agregarCliente" tabindex="-1" aria-hidden="true">
-                                                                                                                              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
-                                                                                                                                <div class="modal-content">
-                                                                                                                                  <div class="modal-header">
-                                                                                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Cliente o prospecto</h1>
-                                                                                                                                    <button class="btn-close" data-bs-dismiss="modal">
-                                                                                                                                    </button>
-                                                                                                                                    </div>
-                                                                                                                                    <div class="modal-body px-4">
-                                                                                                                                      <h5>Cliente o prospecto</h5>
-                                                                                                                                      <div class="row mt-3">
-                                                                                                                                        <div class="col-md-4 mb-4">                
-                                                                                                                                        <label class="form-label fw-normal  color-negro">Cliente / Prospecto</label>
-                                                                                                                                        <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Cliente/Prospecto"/>
-                                                                                                                                        </div>
-                                                                                                                                        <div class="col-md-4 mb-3">
-                                                                                                                                          <label class="form-label fw-normal color-negro">Tipo de cliente o prospecto</label>
-                                                                                                                                          <select class="form-select">
-                                                                                                                                            <option selected disabled>Seleccione una opción</option>
-                                                                                                                                            <option value="1">Cliente</option>
-                                                                                                                                            <option value="2">Persona física</option>
-                                                                                                                                            <option value="3">Persona Moral</option>
-                                                                                                                                            </select>
-                                                                                                                                            </div>
-                                                                                                                                            <div class="col-md-4 mb-3">
-                                                                                                                                              <label class="form-label fw-normal color-negro">Nombre comercial</label>
-                                                                                                                                              <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Nombre comercial"/>
-                                                                                                                                              </div>
-                                                                                                                                              </div>
-                                                                                                                                              <div class="row mb-4">
-                                                                                                                                                <h5>Persona Física</h5>
-                                                                                                                                                <div class="col-md-4 mb-3">
-                                                                                                                                                  <label class="form-label fw-normal color-negro">Nombre</label>
-                                                                                                                                                  <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Nombre"/>
-                                                                                                                                                  </div>
-                                                                                                                                                  <div class="col-md-4 mb-3">
-                                                                                                                                                    <label class="form-label fw-normal color-negro">Apellido</label>
-                                                                                                                                                    <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Apellido"/>
-                                                                                                                                                    </div>
-                                                                                                                                                    <div class="col-md-4 mb-3">
-                                                                                                                                                      <label class="form-label fw-normal color-negro">Teléfono</label>
-                                                                                                                                                      <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Teléfono"/>
-                                                                                                                                                      </div>
-                                                                                                                                                      <div class="col-md-4 mb-3">
-                                                                                                                                                        <label class="form-label fw-normal color-negro">Correo electrónico</label>
-                                                                                                                                                        <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Correo electrónico"/>
-                                                                                                                                                        </div>
-                                                                                                                                                        <div class="col-md-4 mb-3">
-                                                                                                                                                          <label class="form-label fw-normal color-negro">Domicilio fiscal</label>
-                                                                                                                                                          <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio fiscal"/>
-                                                                                                                                                          </div>
-                                                                                                                                                          <div class="col-md-4 mb-3">
-                                                                                                                                                            <label class="form-label fw-normal color-negro">Domicilio convencional</label>
-                                                                                                                                                            <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio convencional"/>
-                                                                                                                                                            </div>
-                                                                                                                                                            <div class="col-md-4 mb-3">
-                                                                                                                                                              <label class="form-label fw-normal color-negro">Domicilio de la fuente de trabajo</label>
-                                                                                                                                                              <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la fuente de trabajo"/>
-                                                                                                                                                              </div>
-                                                                                                                                                              </div>
-                                                                                                                                                              </div>
-                                                                                                                                                              <div class="modal-footer">
-                                                                                                                                                                <button class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
-                                                                                                                                                                <button class="btn fondo-naranja boton-naranja px-5">Agregar</button>
-                                                                                                                                                                </div>
-                                                                                                                                                                </div>
-                                                                                                                                                                </div>
-                                                                                                                                                                </div>
-                                                                                                                                                                <!-- Modal Agregar Domicilio-->
-                                                                                                                                                                <div class="modal textos fade" id="domicilioModal" tabindex="-1" aria-hidden="true">
-                                                                                                                                                                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-                                                                                                                                                                    <div class="modal-content">
-                                                                                                                                                                      <div class="modal-header">
-                                                                                                                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar domicilio</h1>
-                                                                                                                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                                                                                                                        </div>
-                                                                                                                                                                        <div class="modal-body px-4">
-                                                                                                                                                                          <h5 class="mt-3">Tipo de domicilio</h5>
-                                                                                                                                                                          <div class="row mb-5 py-3">
-                                                                                                                                                                            <div class="col-md-6 mb-3">
-                                                                                                                                                                              <div class="form-outline mb-4">
-                                                                                                                                                                                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Tipo de domicilio</label>
-                                                                                                                                                                                <select class="form-select" aria-label="Default select example">
-                                                                                                                                                                                  <option selected>Seleccione una opción</option>
-                                                                                                                                                                                  <option value="1">Domicilio Fiscal</option>
-                                                                                                                                                                                  <option value="2">Domicilio convencional</option>
-                                                                                                                                                                                  <option value="3">Domicilio de la fuente de trabajo </option>
-                                                                                                                                                                                  </select>
-                                                                                                                                                                                  </div>
-                                                                                                                                                                                  </div>
-                                                                                                                                                                                  <div class="col-md-6 mb-3">
-                                                                                                                                                                                    <div class="form-outline mb-4">
-                                                                                                                                                                                      <label class="form-label fw-normal  color-negro" for="typeEmailX-2">Domicilio</label>
-                                                                                                                                                                                      <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio"/>
-                                                                                                                                                                                      </div>
-                                                                                                                                                                                      </div>
-                                                                                                                                                                                      </div>
-                                                                                                                                                                                      </div>
-                                                                                                                                                                                      <div class="modal-footer">
-                                                                                                                                                                                        <button type="button" class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
-                                                                                                                                                                                        <button type="button" class="btn fondo-naranja boton-naranja px-5">Agregar</button>
-                                                                                                                                                                                        </div>
-                                                                                                                                                                                        </div>
-                                                                                                                                                                                        </div>
-                                                                                                                                                                                        </div>
-                                                                                                                                                                                        <!-- Modal persona -->
-                                                                                                                                                                                        <div class="modal textos fade" id="personaModal" tabindex="-1" aria-hidden="true">
-                                                                                                                                                                                          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
-                                                                                                                                                                                            <div class="modal-content">
-                                                                                                                                                                                              <div class="modal-header">
-                                                                                                                                                                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar persona</h1>
-                                                                                                                                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                                                                                                                                                </div>
-                                                                                                                                                                                                <div class="modal-body px-4">
-                                                                                                                                                                                                  <div class="row mb-5 py-3">
-                                                                                                                                                                                                    <div class="col-md-4 mb-3">
-                                                                                                                                                                                                      <div class="form-outline mb-4">
-                                                                                                                                                                                                        <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Tipo de persona</label>
-                                                                                                                                                                                                        <select class="form-select" aria-label="Default select example">
-                                                                                                                                                                                                          <option selected>Seleccione una opción</option>
-                                                                                                                                                                                                          <option value="1">Peronsa moral</option>
-                                                                                                                                                                                                          <option value="2">Persona física</option>
-                                                                                                                                                                                                          </select>
-                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                          <h5 class="mt-2 py-2">Persona Física</h5>
-                                                                                                                                                                                                          <div class="col-md-4 mb-3">
-                                                                                                                                                                                                            <div class="form-outline mb-4">
-                                                                                                                                                                                                              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Nombre</label>
-                                                                                                                                                                                                              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Nombre"/>
-                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                              <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                <div class="form-outline mb-4">
-                                                                                                                                                                                                                  <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Apellido</label>
-                                                                                                                                                                                                                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Apellido"/>
-                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                  <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                    <div class="form-outline mb-4">
-                                                                                                                                                                                                                      <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Puesto</label>
-                                                                                                                                                                                                                      <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Teléfono"/>
-                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                      <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                        <div class="form-outline mb-4">
-                                                                                                                                                                                                                          <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Teléfono</label>
-                                                                                                                                                                                                                          <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Correo electrónico"/>
-                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                          <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                            <div class="form-outline mb-4">
-                                                                                                                                                                                                                              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Correo electrónico</label>
-                                                                                                                                                                                                                              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio fiscal"/>
-                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                              <div class="modal-footer">
-                                                                                                                                                                                                                                <button type="button" class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
-                                                                                                                                                                                                                                <button type="button" class="btn fondo-naranja boton-naranja px-5">Agregar</button>
-                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                <!-- Modal Agregar Trámite-->
-                                                                                                                                                                                                                                <div class="modal textos fade" id="tramiteModal" tabindex="-1" aria-hidden="true">
-                                                                                                                                                                                                                                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
-                                                                                                                                                                                                                                    <div class="modal-content">
-                                                                                                                                                                                                                                      <div class="modal-header">
-                                                                                                                                                                                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar trámite o proceso</h1>
-                                                                                                                                                                                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                        <div class="modal-body px-4">
-                                                                                                                                                                                                                                          <div class="row mb-5 py-3">
-                                                                                                                                                                                                                                            <div class="col-md-4 ">
-                                                                                                                                                                                                                                              <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Cliente / Prospecto</label>
-                                                                                                                                                                                                                                                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Cliente/Prospecto"/>
-                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                  <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                    <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Proceso / Trámite</label>
-                                                                                                                                                                                                                                                    <select class="form-select" aria-label="Default select example">
-                                                                                                                                                                                                                                                      <option selected>Seleccione una opción</option>
-                                                                                                                                                                                                                                                      <option value="1">Opción 1</option>
-                                                                                                                                                                                                                                                      <option value="2">Opción 2</option>
-                                                                                                                                                                                                                                                      <option value="3">Opción 3</option>
-                                                                                                                                                                                                                                                      </select>
-                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                      <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                        <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                          <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Fecha de intervención</label>
-                                                                                                                                                                                                                                                          <select class="form-select" aria-label="Default select example">
-                                                                                                                                                                                                                                                            <option selected>Seleccione una opción</option>
-                                                                                                                                                                                                                                                            <option value="1">Opción 1</option>
-                                                                                                                                                                                                                                                            <option value="2">Opción 2</option>
-                                                                                                                                                                                                                                                            <option value="3">Opción 3</option>
-                                                                                                                                                                                                                                                            </select>
-                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                            <h5 class="mt-2 py-2">Proceso / Trámite </h5>
-                                                                                                                                                                                                                                                            <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                              <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Número de expediente</label>
-                                                                                                                                                                                                                                                                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Nombre"/>
-                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                                  <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                                  <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Año</label>
-                                                                                                                                                                                                                                                                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Apellido"/>
-                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                  <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                                    <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                                      <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Junta</label>
-                                                                                                                                                                                                                                                                      <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Teléfono"/>
-                                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                                      <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                                        <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                                          <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Mesa</label>
-                                                                                                                                                                                                                                                                          <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Correo electrónico"/>
-                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                          <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                                            <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                                              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Nombre completo autoridad</label>
-                                                                                                                                                                                                                                                                              <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio fiscal"/>
-                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                              <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                                                <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                                                  <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Domicilio</label>
-                                                                                                                                                                                                                                                                                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio convencional"/>
-                                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                                  <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                                                    <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                                                      <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Tipo de expediente</label>
-                                                                                                                                                                                                                                                                                      <select class="form-select" aria-label="Default select example">
-                                                                                                                                                                                                                                                                                        <option selected>Seleccione una opción</option>
-                                                                                                                                                                                                                                                                                        <option value="1">Opción 1</option>
-                                                                                                                                                                                                                                                                                        <option value="2">Opción 2</option>
-                                                                                                                                                                                                                                                                                        <option value="3">Opción 3</option>
-                                                                                                                                                                                                                                                                                        </select>
-                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                        <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                                                          <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                                                            <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Ubicación en físico</label>
-                                                                                                                                                                                                                                                                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la fuente de trabajo"/>
-                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                            <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                                                              <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                                                                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Código de barras</label>
-                                                                                                                                                                                                                                                                                                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la fuente de trabajo"/>
-                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                                                                  <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                                                                    <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Número de proyecto</label>
-                                                                                                                                                                                                                                                                                                    <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la fuente de trabajo"/>
-                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                    <div class="col-md-4 mb-3">
-                                                                                                                                                                                                                                                                                                      <div class="form-outline mb-4">
-                                                                                                                                                                                                                                                                                                        <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Estado administrativo</label>
-                                                                                                                                                                                                                                                                                                        <select class="form-select" aria-label="Default select example">
-                                                                                                                                                                                                                                                                                                          <option selected>Seleccione una opción</option>
-                                                                                                                                                                                                                                                                                                          <option value="1">Opción 1</option>
-                                                                                                                                                                                                                                                                                                          <option value="2">Opción 2</option>
-                                                                                                                                                                                                                                                                                                          <option value="3">Opción 3</option>
-                                                                                                                                                                                                                                                                                                          </select>
-                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                          <div class="modal-footer">
-                                                                                                                                                                                                                                                                                                            <button type="button" class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
-                                                                                                                                                                                                                                                                                                            <button type="button" class="btn fondo-naranja boton-naranja px-5">Agregar</button>
-                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                            </div>
+                <ul class="dropdown-menu border-0 py-4">
+                  <li><a class="dropdown-item" href="#">Nombre</a></li>
+                  <li><a class="dropdown-item" href="#">Correo electrónico</a></li>
+                  <li><a class="dropdown-item" href="#">Puesto</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!---------------------------Tabla personas---------------------------->
+          <div class="table-responsive">
+            <table class="table text-center textos">
+              <thead>
+                <tr>
+                  <th style="min-width:300px; width:30%">Nombre</th>
+                  <th style="min-width:300px; width:30%">Correo electrónico</th>
+                  <th style="min-width:200px; width:20%">Telefono</th>
+                  <th style="min-width:100px; width:10%">Puesto</th>
+                  <th style="min-width:200px; width:10%">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-3">Aluguesa</td>
+                  <td class="py-3">correo@ejemplo.com</td>
+                  <td class="py-3">5879</td>
+                  <td class="py-3">5879</td>
+                  <td class="py-3">
+                    <button class="btn boton-azul fondo-azul2 text-white">
+                      <i class="fa-solid fa-pen px-2 "></i>
+                      <span class="fw-light">Editar</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-3">Aluguesa</td>
+                  <td class="py-3">correo@ejemplo.com</td>
+                  <td class="py-3">4579</td>
+                  <td class="py-3">4579</td>
+                  <td class="py-3">
+                    <button class="btn gap-2 boton-azul2 fondo-azul2 text-white">
+                      <i class="fa-solid fa-pen px-2"></i>
+                      Editar
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-3">Aluguesa</td>
+                  <td class="py-3">3248</td>
+                  <td class="py-3">3248</td>
+                  <td class="py-3">3248</td>
+                  <td class="py-3"><button class="btn boton-azul fondo-azul2 text-white">
+                    <i class="fa-solid fa-pen px-2"></i>
+                    Editar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-----------------------Sección Tramite----------------------------->
+    </hr>
+    <div class="mt-5 bg-white">
+      <div class="row px-5 pt-5 mb-5">
+        <div class="col-4">
+          <h2>Trámite / Proceso</h2>
+        </div>
+        <div class="col-8 text-end">
+          <button class="btn fondo-naranja boton-naranja me-2" data-bs-toggle="modal" data-bs-target="#tramiteModal">
+            Agregar trámite
+          </button>
+          <div class="dropdown float-end">
+            <button class="btn px-3 fondo-verde boton-verde color-azul dropdown-toggle me-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-sliders px-2"></i>
+              Filtrar
+            </button>
+            <ul class="dropdown-menu border-0 py-4">
+              <li><a class="dropdown-item" href="#">Nombre</a></li>
+              <li><a class="dropdown-item" href="#">Correo electrónico</a></li>
+              <li><a class="dropdown-item" href="#">Puesto</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-----------------------Tabla Tramite-------------------------->
+      <div class="table-responsive">
+        <table class="table text-center textos">
+          <thead>
+            <tr>
+              <th style="min-width:100px; width:10%">Cliente</th>
+              <th style="min-width:120px; width:10%">Autoridad</th>
+              <th style="min-width:100px; width:15%">Actores</th>
+              <th style="min-width:200px; width:15%">Demandado</th>
+              <th style="min-width:200px; width:10%">Número de expediente</th>
+              <th style="min-width:100px; width:10%">Importe Total</th>
+              <th style="min-width:100px; width:10%">Total contingencia</th>
+              <th style="min-width:100px; width:10%">Estatus</th>
+              <th style="min-width:120px; width:10%">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-3">Aluguesa</td>
+              <td class="py-3">Loremp ipsum</td>
+              <td class="py-3" class="color-naranja fw-semibold">Wesley James y otros</td>
+              <td class="py-3">Alberta Floys y otros</td>
+              <td class="py-3">2552/2015/15-A</td>
+              <td class="py-3">$53,400.00</td>
+              <td class="py-3">$13,200.00</td>
+              <td class="py-3"><span class="badge fondo-verde2 fs-6">Activo</span></td>
+              <td class="py-3">
+                <button class="btn boton-azul  fondo-azul2 text-white">
+                <i class="fa-solid fa-eye px-2"></i>
+                Ver
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+<!----------------------------Modal Agregar Cliente---------------------------------->
+  <div class="modal textos fade" id="agregarCliente" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Cliente o prospecto</h1>
+          <button class="btn-close" data-bs-dismiss="modal">
+          </button>
+        </div>
+        <div class="modal-body px-4">
+          <h5>Cliente o prospecto</h5>
+          <div class="row mt-3">
+            <div class="col-md-4 mb-4">
+              <label class="form-label fw-normal  color-negro">Cliente / Prospecto</label>
+              <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Cliente/Prospecto"/>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-normal color-negro">Tipo de cliente o prospecto</label>
+              <select class="form-select">
+                <option selected disabled>Seleccione una opción</option>
+                <option value="1">Cliente</option>
+                <option value="2">Persona física</option>
+                <option value="3">Persona Moral</option>
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-normal color-negro">Nombre comercial</label>
+              <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Nombre comercial"/>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <h5>Persona Física</h5>
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-normal color-negro">Nombre</label>
+              <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Nombre"/>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-normal color-negro">Apellido</label>
+              <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Apellido"/>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-normal color-negro">Teléfono</label>
+              <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Teléfono"/>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-normal color-negro">Correo electrónico</label>
+              <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Correo electrónico"/>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-normal color-negro">Domicilio fiscal</label>
+              <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio fiscal"/>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-normal color-negro">Domicilio convencional</label>
+              <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio convencional"/>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label fw-normal color-negro">Domicilio de la fuente de trabajo</label>
+              <input type="text" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la fuente de trabajo"/>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
+          <button class="btn fondo-naranja boton-naranja px-5">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-------------------------Modal Agregar Domicilio--------------------------------->
+  <div class="modal textos fade" id="domicilioModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar domicilio</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-4">
+          <h5 class="mt-3">Tipo de domicilio</h5>
+          <div class="row mb-5 py-3">
+            <div class="col-md-6 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Tipo de domicilio</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Seleccione una opción</option>
+                  <option value="1">Domicilio Fiscal</option>
+                  <option value="2">Domicilio convencional</option>
+                  <option value="3">Domicilio de la fuente de trabajo </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2">Domicilio</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn fondo-naranja boton-naranja px-5">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!---------------------------------Modal persona--------------------------------->
+  <div class="modal textos fade" id="personaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar persona</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-4">
+          <div class="row mb-5 py-3">
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Tipo de persona</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Seleccione una opción</option>
+                  <option value="1">Peronsa moral</option>
+                  <option value="2">Persona física</option>
+                </select>
+              </div>
+            </div>
+            <h5 class="mt-2 py-2">Persona Física</h5>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Nombre</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Nombre"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Apellido</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Apellido"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Puesto</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Teléfono"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Teléfono</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Correo electrónico"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Correo electrónico</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio fiscal"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn fondo-naranja boton-naranja px-5">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!---------------------------Modal Agregar Trámite------------------------------->
+  <div class="modal textos fade" id="tramiteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar trámite o proceso</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-4">
+          <div class="row mb-5 py-3">
+            <div class="col-md-4 ">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Cliente / Prospecto</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Cliente/Prospecto"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Proceso / Trámite</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Seleccione una opción</option>
+                  <option value="1">Opción 1</option>
+                  <option value="2">Opción 2</option>
+                  <option value="3">Opción 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Fecha de intervención</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Seleccione una opción</option>
+                  <option value="1">Opción 1</option>
+                  <option value="2">Opción 2</option>
+                  <option value="3">Opción 3</option>
+                </select>
+              </div>
+            </div>
+            <h5 class="mt-2 py-2">Proceso / Trámite </h5>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Número de expediente</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Nombre"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Año</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Apellido"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Junta</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Teléfono"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Mesa</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Correo electrónico"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Nombre completo autoridad</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio fiscal"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Domicilio</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio convencional"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Tipo de expediente</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Seleccione una opción</option>
+                  <option value="1">Opción 1</option>
+                  <option value="2">Opción 2</option>
+                  <option value="3">Opción 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Ubicación en físico</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la fuente de trabajo"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Código de barras</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la fuente de trabajo"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Número de proyecto</label>
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg fs-6 fw-normal" placeholder="Domicilio de la fuente de trabajo"/>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-outline mb-4">
+                <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Estado administrativo</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Seleccione una opción</option>
+                  <option value="1">Opción 1</option>
+                  <option value="2">Opción 2</option>
+                  <option value="3">Opción 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn fondo-gris px-5" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn fondo-naranja boton-naranja px-5">Agregar</button>
+        </div>
+      </div>
+    </div>
 `;
   divContent.removeClass("mt-5 text-center").html(html);
   // const getInfo = await requestAxios('GET', 'urlapizifris', {});
@@ -1034,212 +1041,213 @@ const renderDemanda = async (divContent) => {
 ////////////////////////
 const renderExpedientes = async (divContent) => {
   initiTitle("Expedientes");
-  const html = `
+  const html =` 
   <!--Titulo-->
   <div class="bg-white" id="divExpedientes">
-  <div id="divExpedientes">
-    <div class="d-flex justify-content-between aligns-items-center mb-5 py-5 px-5 border-bottom">
+    <div id="divExpedientes">
+      <div class="d-flex justify-content-between aligns-items-center mb-5 py-5 px-5 border-bottom">
       <div class="d-flex">
         <h2>
           Expedientes
         </h2>
       </div>
   </div>
-<!-- Section inputs -->
-<div class="px-4 textos">
-<div class="row mb-5 py-3">
-<div class="col-md-3 mb-3">
-  <div class="form-outline mb-4">
-    <label class="form-label fw-normal color-negro" for="typeEmailX-2 ">Cliente</label>
-    <input type="text" id="typeEmailX-2" class="form-control  form-control-lg fs-6 fw-normal" placeholder="Nombre de cliente"/>
-  </div>
-</div>
-<div class="col-md-3 mb-4">
-  <div class="form-outline mb-4">
-    <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Tipo de trámite / proceso</label>
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Seleccione una opción</option>
-      <option value="1">Cliente</option>
-      <option value="2">Persona física</option>
-      <option value="3">Persona Moral</option>
-    </select>
-  </div>
-</div>
-<div class="col-md-3 mb-4">
-  <div class="form-outline mb-4">
-    <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Subtipo</label>
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Seleccione una opción</option>
-      <option value="1">Cliente</option>
-      <option value="2">Persona física</option>
-      <option value="3">Persona Moral</option>
-    </select>
-  </div>
-</div>
-<div class="col-md-3 mb-3">
-  <div class="form-outline mb-4">
-    <label class="form-label fw-normal color-negro" for="typeEmailX-2 ">Número de expediente</label>
-    <input type="text" id="typeEmailX-2" class="form-control  form-control-lg fs-6 fw-normal" placeholder="No. de expediente"/>
-  </div>
-</div>
-<div class="col-md-3 mb-3">
-  <div class="form-outline mb-4">
-    <label class="form-label fw-normal color-negro" for="typeEmailX-2 ">Actor</label>
-    <input type="text" id="typeEmailX-2" class="form-control  form-control-lg fs-6 fw-normal" placeholder="Actor"/>
-  </div>
-</div>
-<div class="col-md-3 mb-3">
-  <div class="form-outline mb-4">
-    <label class="form-label fw-normal color-negro" for="typeEmailX-2 ">Demandado</label>
-    <input type="text" id="typeEmailX-2" class="form-control  form-control-lg fs-6 fw-normal" placeholder="Demandado"/>
-  </div>
-</div>
-<div class="col-md-3 mb-3">
-  <div class="form-outline mb-4">
-    <label class="form-label fw-normal color-negro" for="typeEmailX-2 ">Autoridad</label>
-    <input type="text" id="typeEmailX-2" class="form-control  form-control-lg fs-6 fw-normal" placeholder="Autoridad"/>
-  </div>
-</div>
-<div class="col-md-3 mb-3">
-    <div class="mt-2">
-      <br>
-      <button class="btn btn-lg fs-6 color-negro w-100 fondo-verde boton-verde sombra1 color-azul border-0">
-        <i class="fa-solid fa-sliders px-2"></i> Filtrar 
-      </button>
-    </div>
-</div>
-</div>
-  </div>
-  <!--Editor section-->
-    <div class="bg-white">
-      <div class="row px-4 mb-5">
-      <div class="col-6">
-        <h5 class="mt-3 color-gris2 fs-6">Resultados de expedientes encontrados</h5>
-      </div>
-      <div class="col-6 text-end">
-        <button  class="btn text-end gap-2 fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <i class="fa-regular fa-file-lines px-2"></i><span>Nuevo expediente</span>
-        </button>
-    </div>
-      </div>
-    </div>
-                  <!--Tabla expedientes-->
-                  <div class="table-responsive py-4">
-                  <table class="table text-center textos">
-                    <thead>
-                      <tr>
-                        <th style="min-width:200px;">Cliente</th>
-                        <th style="min-width:200px;">Autoridad</th>
-                        <th style="min-width:200px;">Actores</th>
-                        <th style="min-width:200px;">Demandado</th>
-                        <th style="min-width:200px;">Número de expediente</th>
-                        <th style="min-width:120px;">Opciones</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Aluguesa</td>
-                        <td>Loremp ipsum</td>
-                        <td class="color-naranja fw-semibold">Wesley James y otros</td>
-                        <td>Alberta Floyd y otros</td>
-                        <td>2552/2015/15-A</td>
-                        <td>
-                        <button class="btn boton-azul  gap-2 fondo-azul2 text-white" onclick="showDetalle('divGenerales','divExpedientes')">
-                          <i class="fa-solid fa-eye px-2"></i><span>Ver</span>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td>Aluguesa</td>
-                        <td>Loremp ipsum</td>
-                        <td>Wesley James y otros</td>
-                        <td class="color-naranja fw-semibold">Alberta Floyd y otros</td>
-                        <td>2552/2015/15-A</td>
-                        <td>
-                        <button type="button" class="btn boton-azul  gap-2 fondo-azul2 text-white" onclick="showDetalle('divGenerales' , 'divExpedientes')">
-                          <i class="fa-solid fa-eye px-2"></i><span>Ver</span>
-                      </td>
-                      <tr>
-                        <td>Aluguesa</td>
-                        <td>Loremp ipsum</td>
-                        <td class="color-naranja fw-semibold">Wesley James y otros</td>
-                        <td>Alberta Floyd y otros</td>
-                        <td>2552/2015/15-A</td>
-                        <td><button type="button" class="btn boton-azul  gap-2 fondo-azul2 text-white" onclick="showDetalle('divGenerales' , 'divExpedientes')">
-                          <i class="fa-solid fa-eye px-2"></i><span>Ver</span>
-                          </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  </div>
-  </div>
-  </div>
-  <!--Detalle expedientes-->
-  <!--Titulo-->
-  <div id="divGenerales" class="d-none">
-    <div class="bg-white mt-4">
-    <div class="row px-5">
-      <div class="col-12 mb-5 mt-5">
-        <h2 class="btn-azul fw-semibold">
-          Expediente: 1212/2015/15-A SA DE CV vs Jorge Pérez López 
-        </h2>
-      </div>
-  </div>
-<!-- Generales Tabs -->
-<div class="row px-5 mt-4">
-<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-12 col-xxl-12">
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-<li class="nav-item" role="presentation">
-  <button class="nav-link active " id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
-</li>
-<li class="nav-item" role="presentation">
-  <button class="nav-link" id="pills-acuerdos-tab" data-bs-toggle="pill" data-bs-target="#pills-acuerdos" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Acuerdos</button>
-</li>
-<li class="nav-item" role="presentation">
-  <button class="nav-link" id="pills-acciones-tab" data-bs-toggle="pill" data-bs-target="#pills-acciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Acciones</button>
-</li>
-<li class="nav-item" role="presentation">
-  <button class="nav-link" id="pills-excepciones-tab" data-bs-toggle="pill" data-bs-target="#pills-excepciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Excepciones</button>
-</li>
-<li class="nav-item" role="presentation">
-  <button class="nav-link" id="pills-pruebas-tab" data-bs-toggle="pill" data-bs-target="#pills-pruebas" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Pruebas</button>
-</li>
-<li class="nav-item" role="presentation">
-  <button class="nav-link" id="pills-resolucion-tab" data-bs-toggle="pill" data-bs-target="#pills-resolucion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Resolución</button>
-</li>
-<li class="nav-item" role="presentation">
-  <button class="nav-link" id="pills-conconciliacion-tab" data-bs-toggle="pill" data-bs-target="#pills-conciliacion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Conciliación</button>
-</li>
-<li class="nav-item" role="presentation">
-  <button class="nav-link" id="pills-reportes-tab" data-bs-toggle="pill" data-bs-target="#pills-reportes" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reportes</button>
-</li>
-<li class="nav-item" role="presentation">
-  <button class="nav-link" id="pills-documentos-tab" data-bs-toggle="pill" data-bs-target="#pills-documentos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Documentos</button>
-</li>
-</ul>
-</div>
-</div>
-<!-- Content Tabs -->
-<div class="tab-content" id="pills-tabContent">
-<!-- Generales-->
-  <div class="tab-pane fade show active" id="pills-generales" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-  <div class="row px-5 mt-4">
-        <div class="col-6 py-2 mb-4"> 
-          <h4>Generales</h4>
-        </div>
-        <div class="col-6 text-end pe-5">          
-            <span class="font-17">Vigente</span>
-            <button type="button" class="btn fondo-gris boton-azul ms-2">
-              <span>Concluido</span>
-            </button>
-            <span class="font-17">Activo</span>
-            <button type="button" class="btn fondo-gris boton-azul ms-2">
-              <span>Inactivo</span>
-            </button>
-        </div>
-      </div>
-      <!--Sections-->
-        
-      <div class="container bg-white px-4">
+  <!--------------------------------Section inputs---------------------------->
+  <div class="px-4 textos">
+    <div class="row mb-5 py-3">
+      <div class="col-md-3 mb-3">
+        <div class="form-outline mb-4">
+          <label class="form-label fw-normal color-negro" for="typeEmailX-2 ">Cliente</label>
+          <input type="text" id="typeEmailX-2" class="form-control  form-control-lg fs-6 fw-normal" placeholder="Nombre de cliente"/>
+          </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="form-outline mb-4">
+              <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Tipo de trámite / proceso</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Seleccione una opción</option>
+                <option value="1">Cliente</option>
+                <option value="2">Persona física</option>
+                <option value="3">Persona Moral</option>
+                </select>
+                </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                  <div class="form-outline mb-4">
+                    <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Subtipo</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Seleccione una opción</option>
+                      <option value="1">Cliente</option>
+                      <option value="2">Persona física</option>
+                      <option value="3">Persona Moral</option>
+                      </select>
+                      </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <div class="form-outline mb-4">
+                          <label class="form-label fw-normal color-negro" for="typeEmailX-2 ">Número de expediente</label>
+                          <input type="text" id="typeEmailX-2" class="form-control  form-control-lg fs-6 fw-normal" placeholder="No. de expediente"/>
+                          </div>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <div class="form-outline mb-4">
+                              <label class="form-label fw-normal color-negro" for="typeEmailX-2 ">Actor</label>
+                              <input type="text" id="typeEmailX-2" class="form-control  form-control-lg fs-6 fw-normal" placeholder="Actor"/>
+                              </div>
+                              </div>
+                              <div class="col-md-3 mb-3">
+                                <div class="form-outline mb-4">
+                                  <label class="form-label fw-normal color-negro" for="typeEmailX-2 ">Demandado</label>
+                                  <input type="text" id="typeEmailX-2" class="form-control  form-control-lg fs-6 fw-normal" placeholder="Demandado"/>
+                                  </div>
+                                  </div>
+                                  <div class="col-md-3 mb-3">
+                                    <div class="form-outline mb-4">
+                                      <label class="form-label fw-normal color-negro" for="typeEmailX-2 ">Autoridad</label>
+                                      <input type="text" id="typeEmailX-2" class="form-control  form-control-lg fs-6 fw-normal" placeholder="Autoridad"/>
+                                      </div>
+                                      </div>
+                                      <div class="col-md-3 mb-3">
+                                        <div class="mt-2">
+                                          <br>
+                                          <button class="btn btn-lg fs-6 color-negro w-100 fondo-verde boton-verde sombra1 color-azul border-0">
+                                            <i class="fa-solid fa-sliders px-2"></i> Filtrar 
+                                            </button>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            <!-----------------------Editor section------------------------->
+                                            <div class="bg-white">
+                                              <div class="row px-4 mb-5">
+                                                <div class="col-6">
+                                                  <h5 class="mt-3 color-gris2 fs-6">Resultados de expedientes encontrados</h5>
+                                                  </div>
+                                                  <div class="col-6 text-end">
+                                                    <button  class="btn fondo-naranja boton-naranja" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                      <i class="fa-regular fa-file-lines px-2"></i>Nuevo expediente
+                                                      </button>
+                                                      </div>
+                                                      </div>
+                                                      </div>
+                                                      <!--Tabla expedientes-->
+                                                      <div class="table-responsive py-4">
+                                                        <table class="table text-center textos">
+                                                          <thead>
+                                                            <tr>
+                                                              <th style="min-width:200px;">Cliente</th>
+                                                              <th style="min-width:200px;">Autoridad</th>
+                                                              <th style="min-width:200px;">Actores</th>
+                                                              <th style="min-width:200px;">Demandado</th>
+                                                              <th style="min-width:200px;">Número de expediente</th>
+                                                              <th style="min-width:120px;">Opciones</th>
+                                                              </tr>
+                                                              </thead>
+                                                              <tbody>
+                                                                <tr>
+                                                                  <td>Aluguesa</td>
+                                                                  <td>Loremp ipsum</td>
+                                                                  <td class="color-naranja fw-semibold">Wesley James y otros</td>
+                                                                  <td>Alberta Floyd y otros</td>
+                                                                  <td>2552/2015/15-A</td>
+                                                                  <td>
+                                                                    <button class="btn boton-azul  gap-2 fondo-azul2 text-white" onclick="showDetalle('divGenerales','divExpedientes')">
+                                                                      <i class="fa-solid fa-eye px-2"></i><span>Ver</span>
+                                                                      </td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <td>Aluguesa</td>
+                                                                        <td>Loremp ipsum</td>
+                                                                        <td>Wesley James y otros</td>
+                                                                        <td class="color-naranja fw-semibold">Alberta Floyd y otros</td>
+                                                                        <td>2552/2015/15-A</td>
+                                                                        <td>
+                                                                          <button type="button" class="btn boton-azul  gap-2 fondo-azul2 text-white" onclick="showDetalle('divGenerales' , 'divExpedientes')">
+                                                                            <i class="fa-solid fa-eye px-2"></i><span>Ver</span>
+                                                                            </td>
+                                                                            <tr>
+                                                                              <td>Aluguesa</td>
+                                                                              <td>Loremp ipsum</td>
+                                                                              <td class="color-naranja fw-semibold">Wesley James y otros</td>
+                                                                              <td>Alberta Floyd y otros</td>
+                                                                              <td>2552/2015/15-A</td>
+                                                                              <td><button type="button" class="btn boton-azul  gap-2 fondo-azul2 text-white" onclick="showDetalle('divGenerales' , 'divExpedientes')">
+                                                                                <i class="fa-solid fa-eye px-2"></i><span>Ver</span>
+                                                                                </td>
+                                                                                </tr>
+                                                                                </tbody>
+                                                                                </table>
+                                                                                </div>
+                                                                                </div>
+                                                                                </div>
+                                                                                <!----------------------------Detalle expedientes---------------------->
+                                                                                <!-------Titulo------>
+                                                                                <div id="divGenerales" class="d-none">
+                                                                                  <div class="bg-white mt-4">
+                                                                                    <div class="row px-5">
+                                                                                      <div class="col-12 mb-5 mt-5">
+                                                                                        <h2 class="btn-azul fw-semibold">
+                                                                                          Expediente: 1212/2015/15-A SA DE CV vs Jorge Pérez López 
+                                                                                          </h2>
+                                                                                          </div>
+                                                                                          </div>
+                                                                                          <!---------------Generales Tabs-------------------->
+                                                                                          <div class="container text-center">
+                                                                                            <div class="row px-5 mt-4">
+                                                                                              <div class="col-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                                                                                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                                                                  <li class="nav-item" role="presentation">
+                                                                                                    <button class="nav-link active mb-2 " id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
+                                                                                                    </li>
+                                                                                                    <li class="nav-item" role="presentation">
+                                                                                                      <button class="nav-link mb-2" id="pills-acuerdos-tab" data-bs-toggle="pill" data-bs-target="#pills-acuerdos" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Acuerdos</button>
+                                                                                                      </li>
+                                                                                                      <li class="nav-item" role="presentation">
+                                                                                                        <button class="nav-link mb-2" id="pills-acciones-tab" data-bs-toggle="pill" data-bs-target="#pills-acciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Acciones</button>
+                                                                                                        </li>
+                                                                                                        <li class="nav-item" role="presentation">
+                                                                                                          <button class="nav-link mb-2" id="pills-excepciones-tab" data-bs-toggle="pill" data-bs-target="#pills-excepciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Excepciones</button>
+                                                                                                          </li>
+                                                                                                          <li class="nav-item" role="presentation">
+                                                                                                            <button class="nav-link mb-2" id="pills-pruebas-tab" data-bs-toggle="pill" data-bs-target="#pills-pruebas" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Pruebas</button>
+                                                                                                            </li>
+                                                                                                            <li class="nav-item" role="presentation">
+                                                                                                              <button class="nav-link mb-2" id="pills-resolucion-tab" data-bs-toggle="pill" data-bs-target="#pills-resolucion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Resolución</button>
+                                                                                                              </li>
+                                                                                                              <li class="nav-item" role="presentation">
+                                                                                                                <button class="nav-link mb-2" id="pills-conconciliacion-tab" data-bs-toggle="pill" data-bs-target="#pills-conciliacion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Conciliación</button>
+                                                                                                                </li>
+                                                                                                                <li class="nav-item" role="presentation">
+                                                                                                                  <button class="nav-link mb-2" id="pills-reportes-tab" data-bs-toggle="pill" data-bs-target="#pills-reportes" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reportes</button>
+                                                                                                                  </li>
+                                                                                                                  <li class="nav-item" role="presentation">
+                                                                                                                    <button class="nav-link mb-2" id="pills-documentos-tab" data-bs-toggle="pill" data-bs-target="#pills-documentos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Documentos</button>
+                                                                                                                    </li>
+                                                                                                                    </ul>
+                                                                                                                    </div>
+                                                                                                                    </div>
+                                                                                                                    </div>
+                                                                                                                    <!-- Content Tabs -->
+                                                                                                                    <div class="tab-content" id="pills-tabContent">
+                                                                                                                      <!-- Generales-->
+                                                                                                                      <div class="tab-pane fade show active" id="pills-generales" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                                                                                                                        <div class="row px-5 mt-4">
+                                                                                                                          <div class="col-4 py-2 mb-4"> 
+                                                                                                                          <h4>Generales</h4>
+                                                                                                                          </div>
+                                                                                                                          <div class="col-8 text-end pe-5">
+                                                                                                                            <span class="font-17">Vigente</span>
+                                                                                                                            <button type="button" class="btn fondo-gris boton-azul ms-2 mb-2">
+                                                                                                                              <span>Concluido</span>
+                                                                                                                              </button>
+                                                                                                                              <span class="font-17">Activo</span>
+                                                                                                                              <button type="button" class="btn fondo-gris boton-azul ms-2">
+                                                                                                                                <span>Inactivo</span>
+                                                                                                                                </button>
+                                                                                                                                </div>
+                                                                                                                                </div>
+                                                                                                                                <!------------Sections---------->
+                                                                                                                                <div class="container bg-white px-4">
        <div class="row">
          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
            <div class="card bg-white py-3">
@@ -1249,8 +1257,8 @@ const renderExpedientes = async (divContent) => {
                    <h2 class="py-3 fw-semibold">AL</h2>
                  </div>
                  <p class="fw-semibold fs-5 px-5 ms-4 py-4">Aluguesa</p>
+                 <i class="px-4 py-3 fa-solid fa-ellipsis-vertical"></i>
                </div>
-               <i class="px-4 py-3 fa-solid fa-ellipsis-vertical"></i>
              </div>
              <div class="row px-5">
                <div class="col-5">
@@ -1312,7 +1320,7 @@ const renderExpedientes = async (divContent) => {
            </div>
          </div>
          <div class="col-12 px-4 mt-5 text-center">
-           <img src="img/my-app.png" class="chart">
+           <img src="img/my-app.png"  class="img-fluid">
          </div>
        </div>
      </div>
@@ -2305,7 +2313,6 @@ const renderDocumentos = async (divContent) => {
         </tbody>
       </table>
 </div>
-
 </div>
 </div>
 
