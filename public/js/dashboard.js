@@ -1193,52 +1193,52 @@ const renderExpedientes = async (divContent) => {
                                                                                           </div>
                                                                                           <!---------------Generales Tabs-------------------->
                                                                                           <div class="container text-center">
-                                                                                            <div class="row px-5 mt-4">
-                                                                                              <div class="col-6 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                                                                                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                                                                                  <li class="nav-item" role="presentation">
-                                                                                                    <button class="nav-link active mb-2 " id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
-                                                                                                    </li>
-                                                                                                    <li class="nav-item" role="presentation">
-                                                                                                      <button class="nav-link mb-2" id="pills-acuerdos-tab" data-bs-toggle="pill" data-bs-target="#pills-acuerdos" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Acuerdos</button>
-                                                                                                      </li>
-                                                                                                      <li class="nav-item" role="presentation">
-                                                                                                        <button class="nav-link mb-2" id="pills-acciones-tab" data-bs-toggle="pill" data-bs-target="#pills-acciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Acciones</button>
-                                                                                                        </li>
-                                                                                                        <li class="nav-item" role="presentation">
-                                                                                                          <button class="nav-link mb-2" id="pills-excepciones-tab" data-bs-toggle="pill" data-bs-target="#pills-excepciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Excepciones</button>
-                                                                                                          </li>
-                                                                                                          <li class="nav-item" role="presentation">
-                                                                                                            <button class="nav-link mb-2" id="pills-pruebas-tab" data-bs-toggle="pill" data-bs-target="#pills-pruebas" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Pruebas</button>
-                                                                                                            </li>
-                                                                                                            <li class="nav-item" role="presentation">
-                                                                                                              <button class="nav-link mb-2" id="pills-resolucion-tab" data-bs-toggle="pill" data-bs-target="#pills-resolucion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Resolución</button>
-                                                                                                              </li>
-                                                                                                              <li class="nav-item" role="presentation">
-                                                                                                                <button class="nav-link mb-2" id="pills-conconciliacion-tab" data-bs-toggle="pill" data-bs-target="#pills-conciliacion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Conciliación</button>
-                                                                                                                </li>
-                                                                                                                <li class="nav-item" role="presentation">
-                                                                                                                  <button class="nav-link mb-2" id="pills-reportes-tab" data-bs-toggle="pill" data-bs-target="#pills-reportes" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reportes</button>
-                                                                                                                  </li>
-                                                                                                                  <li class="nav-item" role="presentation">
-                                                                                                                    <button class="nav-link mb-2" id="pills-documentos-tab" data-bs-toggle="pill" data-bs-target="#pills-documentos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Documentos</button>
-                                                                                                                    </li>
-                                                                                                                    </ul>
-                                                                                                                    </div>
-                                                                                                                    </div>
+                                                                                          <div class="row px-5">
+                                                                                          <div class="col-6 col-sm-12 col-md-12 col-lg-6 col-xl-12 col-xxl-12 text-center">
+                                                                                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                                                              <li class="nav-item" role="presentation">
+                                                                                                <button class="nav-link active " id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
+                                                                                              </li>
+                                                                                              <li class="nav-item" role="presentation">
+                                                                                                <button class="nav-link" id="pills-acuerdos-tab" data-bs-toggle="pill" data-bs-target="#pills-acuerdos" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Acuerdos</button>
+                                                                                              </li>
+                                                                                              <li class="nav-item" role="presentation">
+                                                                                                <button class="nav-link" id="pills-acciones-tab" data-bs-toggle="pill" data-bs-target="#pills-acciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Acciones</button>
+                                                                                              </li>
+                                                                                              <li class="nav-item" role="presentation">
+                                                                                                <button class="nav-link" id="pills-excepciones-tab" data-bs-toggle="pill" data-bs-target="#pills-excepciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Excepciones</button>
+                                                                                              </li>
+                                                                                              <li class="nav-item" role="presentation">
+                                                                                              <button class="nav-link" id="pills-pruebas-tab" data-bs-toggle="pill" data-bs-target="#pills-pruebas" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Pruebas</button>
+                                                                                              </li>
+                                                                                              <li class="nav-item" role="presentation">
+                                                                                                <button class="nav-link" id="pills-resolucion-tab" data-bs-toggle="pill" data-bs-target="#pills-resolucion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Resolución</button>
+                                                                                              </li>
+                                                                                              <li class="nav-item" role="presentation">
+                                                                                                <button class="nav-link" id="pills-conconciliacion-tab" data-bs-toggle="pill" data-bs-target="#pills-conciliacion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Conciliación</button>
+                                                                                              </li>
+                                                                                              <li class="nav-item" role="presentation">
+                                                                                                <button class="nav-link" id="pills-reportes-tab" data-bs-toggle="pill" data-bs-target="#pills-reportes" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reportes</button>
+                                                                                              </li>
+                                                                                              <li class="nav-item" role="presentation">
+                                                                                                <button class="nav-link" id="pills-documentos-tab" data-bs-toggle="pill" data-bs-target="#pills-documentos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Documentos</button>
+                                                                                              </li>
+                                                                                            </ul>
+                                                                                          </div>
+                                                                                        </div>                                                                                          
                                                                                                                     </div>
                                                                                                                     <!-- Content Tabs -->
                                                                                                                     <div class="tab-content" id="pills-tabContent">
                                                                                                                       <!-- Generales-->
                                                                                                                       <div class="tab-pane fade show active" id="pills-generales" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                                                                                                                         <div class="row px-5 mt-4">
-                                                                                                                          <div class="col-4 py-2 mb-4"> 
+                                                                                                                          <div class="col-6 py-2 mb-4"> 
                                                                                                                           <h4>Generales</h4>
                                                                                                                           </div>
-                                                                                                                          <div class="col-8 text-end pe-5">
-                                                                                                                            <span class="font-17">Vigente</span>
+                                                                                                                          <div class="col-6 text-end pe-5">
+                                                                                                                            Vigente
                                                                                                                             <button type="button" class="btn fondo-gris boton-azul ms-2 mb-2">
-                                                                                                                              <span>Concluido</span>
+                                                                                                                              Concluido
                                                                                                                               </button>
                                                                                                                               <span class="font-17">Activo</span>
                                                                                                                               <button type="button" class="btn fondo-gris boton-azul ms-2">
@@ -1247,132 +1247,94 @@ const renderExpedientes = async (divContent) => {
                                                                                                                                 </div>
                                                                                                                                 </div>
                                                                                                                                 <!------------Sections---------->
-                                                                                                                                <div class="container bg-white px-4">
-       <div class="row">
-         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
-           <div class="card bg-white py-3">
-             <div class="d-flex justify-content-between aligns-items-center mb-5 py-3">
-               <div class="d-flex">
-                 <div class="mayus fondo-gris rounded px-4 py-4">
-                   <h2 class="py-3 fw-semibold">AL</h2>
-                 </div>
-                 <p class="fw-semibold fs-5 px-5 ms-4 py-4">Aluguesa</p>
-                 <i class="px-4 py-3 fa-solid fa-ellipsis-vertical"></i>
-               </div>
-             </div>
-             <div class="row px-5">
-               <div class="col-5">
-                 <span  class="fw-normal color-gris2 fs-6">Expediente:</span>
-               </div>
-               <div class="col-7">
-                 <span class="color-negro fw-normal fs-6 px-5">2552/2015/15-A</span>
-               </div>
-               <div class="col-5">
-                 <span  class="fw-normal color-gris2 fs-6">Tribunal:</span>
-               </div>
-               <div class="col-7">
-                 <span class="color-negro fw-normal fs-6 px-5">Junta especial no. 15</span>
-               </div>
-               <div class="col-5">
-                 <span  class="fw-normal color-gris2 fs-6">Actores:</span>
-               </div>
-               <div class="col-7">
-                 <span class="color-negro fw-normal fs-6 px-5">Magguie Romero</span>
-               </div>
-               <div class="col-5">
-                 <span  class="fw-normal color-gris2 fs-6">Demandados:</span>
-               </div>
-               <div class="col-7">
-                 <span class="color-negro fw-normal fs-6 px-5">Juan Pérez</span>
-               </div>
-               <div class="col-5">
-                 <span  class="fw-normal color-gris2 fs-6">Demanda inicial:</span>
-               </div>
-               <div class="col-7">
-                 <span class="color-negro fw-normal fs-6 px-5">25 Ene 2022</span>
-               </div>
-               <div class="col-5">
-                 <span  class="fw-normal color-gris2 fs-6">Ampliación, modificación, aclaración, precisión:</span>
-               </div>
-               <div class="col-7">
-                 <span class="color-negro fw-normal fs-6 px-5">13 Jul 2022</span>
-               </div>
-               <div class="col-5">
-                 <span  class="fw-normal color-gris2 fs-6">Demanda laboral:</span>
-               </div>
-               <div class="col-7">
-                 <span class="color-negro fw-normal fs-6 px-5">25 Ene 2022</span>
-               </div>
-               <div class="col-5">
-                 <span  class="fw-normal color-gris2 fs-6">Fecha de presentación de demanda:</span>
-               </div>
-               <div class="col-7">
-                 <span class="color-negro fw-normal fs-6 px-5">25 Ene 2022</span>
-               </div>
-             </div>
-           </div>
-         </div>
-         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
-           <div class="card bg-white py-3">
-             <div class="row px-4">
-               <div class="col-12">
-             <h5>Linea del tiempo / Riesgo</h5>
-           </div>
-         </div>
-         <div class="col-12 px-4 mt-5 text-center">
-           <img src="img/my-app.png"  class="img-fluid">
-         </div>
-       </div>
-     </div>
-     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
-       <div class="card py-3">
-         <div class="row">
-           <div class="col-12"></div>
-           <div class="row mt-3 py-4 mb-5">
-             <div class="col-8 px-5">
-               <h2 class="fs-5 fw-semibold">Acumulado</h2>
-             </div>
-             <div class="col-4 text-end pe-5">
-               <button class="btn fondo-naranja boton-naranja">
-                   Agregar
-                 </button>
-               </div>
-               <div class="col-12 px-5">
-                 <span class="color-gris2">No hay registros</span>
-                 <span class="fw-semibold px-4">0</span>
-               </div>
-             </div> 
-             <div class="row  py-4 mb-5">
-               <div class="col-8 ps-5">
-                 <h2 class="fs-5 fw-semibold">Alias</h2>
-               </div>
-               <div class="col-4 text-end pe-5">
-                 <button class="btn fondo-naranja boton-naranja">
-                   Agregar
-                 </button>
-               </div>
-               <div class="col-12 px-5">
-                 <span class="color-gris2">No hay registros</span>
-                 <span class="fw-semibold px-4">0</span>
-               </div>
-             </div>
-             <div class="row  py-4 mb-5">
-               <div class="col-8 ps-5">
-                 <h2 class="fs-5 fw-semibold">Relacionado</h2>
-               </div>
-               <div class="col-4 text-end pe-5">
-                 <button class="btn fondo-naranja boton-naranja">
-                   Agregar
-                 </button>
-               </div>
-               <div class="col-12 px-5">
-                 <span class="color-gris2">Total de registros:</span>
-                 <span class="fw-semibold px-4">4</span>
-               </div>
-             </div>
-         </div>
-         </div>
-       </div>
+    <div class="container bg-white px-4 mt-5">
+       <div class="row mb-3 gap-3">
+         <div class="col rounded border">
+              <div class="row px-5 mb-3 mt-2">
+                <div class="col-3 mt-4 mb-3 fondo-gris rounded py-4 text-center">
+                  <h2 class="fw-semibold">AL</h2>
+                </div>
+                <div class="col-9 mt-5">
+                  <span class="fw-semibold fs-5">Aluguesa</span>
+                </div>
+                <!------Section info----->
+                <div class="col-6 color-gris2 fs-6">Expediente:</div>
+                <div class="col-6 text-end">552/2015/15-A</div>
+                <div class="col-6 color-gris2 fs-6">Tribunal:</div>
+                <div class="col-6 text-end">Junta especial no. 15</div>
+                <div class="col-6 color-gris2 fs-6">Actores:</div>
+                <div class="col-6 text-end">Magguie Romero</div>
+                <div class="col-6 color-gris2 fs-6">Demandados:</div>
+                <div class="col-6 text-end">José Peréz</div>
+                <div class="col-6 color-gris2 fs-6">Demanda inicial:</div>
+                <div class="col-6 text-end">13 Julio 2022</div>
+                <div class="col-6 color-gris2 fs-6">Ampliación, medición, alcaración, precisión:</div>
+                <div class="col-6 text-end">Junta especial no. 15</div>
+                <div class="col-6 color-gris2 fs-6">Demanda laboral:</div>
+                <div class="col-6 text-end">25 Enero 2023</div>
+                <div class="col-6 color-gris2 fs-6">Fecha de presentación de demanda:</div>
+                <div class="col-6 text-end">25 Enero 2023</div>
+              </div>
+            </div>
+            <!-------------CARD 2----------------->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 border rounded">
+              <div class="col-12 px-5 mt-4 mb-3">
+                <h5>Linea del tiempo / Riesgo</h5>
+              </div>
+              <div class="container">
+                <img src="img/my-app.png"  class="img-fluid">
+              </div>
+            </div>
+        </div>
+        <!-------------CARD 3----------------->
+           
+     <div class="row">
+       <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+            <div class="mb-5 rounded border">
+              <div class="row mt-4 py-4 mb-5">
+                <div class="col-8 px-5">
+                  <h2 class="fs-5 fw-semibold">Acumulado</h2>
+                </div>
+                <div class="col-4 text-end pe-5">
+                  <button class="btn fondo-naranja boton-naranja">
+                    Agregar
+                  </button>
+                </div>
+                <div class="col-6 px-5 color-gris2">No hay registros</div>
+                <div class="col-6 fw-semibold">0</div>
+              </div>
+              <div class="row  py-4 mb-5">
+                <div class="col-8 ps-5">
+                  <h2 class="fs-5 fw-semibold">Alias</h2>
+                </div>
+                <div class="col-4 text-end pe-5">
+                  <button class="btn fondo-naranja boton-naranja">
+                    Agregar
+                  </button>
+                </div>
+                <div class="col-12 px-5">
+                  <span class="color-gris2">No hay registros</span>
+                  <span class="fw-semibold px-4">0</span>
+                </div>
+              </div>
+              <div class="row py-4 mb-5">
+                <div class="col-8 px-5">
+                  <h2 class="fs-5 fw-semibold">Relacionado</h2>
+                </div>
+                <div class="col-4 text-end pe-5">
+                  <button class="btn fondo-naranja boton-naranja">
+                    Agregar
+                  </button>
+                </div>
+                <div class="col-12 px-5">
+                  <span class="color-gris2">Total de registros:</span>
+                  <span class="fw-semibold px-4">4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+       
+       <!-------------CARD 4----------------->
        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
          <div class="card bg-white py-3">
            <div class="px-4">
@@ -1421,6 +1383,8 @@ const renderExpedientes = async (divContent) => {
      </div>
    </div>
   </div>
+  </div>
+  </div>  <!-- ciera el row-->
 
   <!-- Acuerdos-->
   <div class="tab-pane fade mb-4" id="pills-acuerdos" role="tabpanel" aria-labelledby="Acuerdos" tabindex="0">
