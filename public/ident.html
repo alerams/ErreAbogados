@@ -12,17 +12,44 @@
     <!--Titulo-->
     <div id="divGenerales" class="">
       <div class="bg-white mt-4">
-        <div class="row px-5">
-          <div class="col-12 mb-5 mt-5 ms-5">
-            <h2 class="btn-azul fw-semibold">
-              Expediente: 1212/2015/15-A SA DE CV vs Jorge Pérez López 
-            </h2>
+        <div class="container">
+          <div class="row px-5">
+            <div class="col-12 col-sm-6 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-3 mt-5 px-5">
+              <h2 class="btn-azul fw-semibold">
+                Expediente: 1212/2015/15-A SA DE CV vs Jorge Pérez López 
+              </h2>
+            </div>
           </div>
         </div>
         <!-- Generales Tabs -->
+        <div class="container">
+        <div class="row text-center gap-2 mb-3">
+          <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+          <div class="col-md-2">
+            <button  class="btn  fondo-naranja" id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
+          </div>
+          <div class="col-md-2">
+            <button  class="btn  fondo-naranja" id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
+          </div>
+          <div class="col-md-2">
+            <button  class="btn  fondo-naranja" id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
+          </div>
+          <div class="col-md-2">
+            <button  class="btn  fondo-naranja" id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
+          </div>
+          <div class="col-md-2">
+            <button  class="btn  fondo-naranja" id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
+          </div>
+          <div class="col-md-2">
+            <button  class="btn  fondo-naranja" id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
+          </div>
+        </div>
+        </div>
+      </div>
+
         <div class="container text-center">
-          <div class="row px-5">
-            <div class="col-6 col-sm-12 col-md-12 col-lg-6 col-xl-12 col-xxl-12 text-center">
+          <div class="row gap-2  text-center">
+            <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
               <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active " id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
@@ -55,8 +82,61 @@
             </div>
           </div>
         </div>
+        <!------------PRUEBA BOTONES--------->
+
+
+        <div class="row">
+          <div class="col-12"></div>
+          <div class="col-12 col-sm-12 pe-5 text-end">
+            <ul class="nav nav-pills mt-3 gap-2 justify-content-end">
+              <li class="nav-item dropdown">
+                <a class="nav-link nav-verde  dropdown-toggle"  data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                  <i class="fa-solid fa-sliders px-2"></i>
+                  Filtrar por tipo
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" >Audiencias</a></li>
+                  <li><a class="dropdown-item" onclick="showDetalle('seccionTerminos', 'seccionAudiencias')">Términos</a></li>
+                  <li><a class="dropdown-item" onclick="showDetalle('seccionPendientes', 'seccionAudiencias')">Pendientes</a></li>
+                  <li><a class="dropdown-item"  >Todos</a></li>
+                  </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link  nav-verde dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                      <i class="fa-solid fa-sliders px-2"></i>
+                      Filtrar
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Total</a></li>
+                        <li><a class="dropdown-item" href="#">Día</a></li>
+                        <li><a class="dropdown-item" href="#">Semana</a></li>
+                        <li><a class="dropdown-item" href="#">Mes</a></li>
+                        <li><a class="dropdown-item" href="#">Mensajería</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active"  data-bs-toggle="modal" data-bs-target="#agregarTarea" aria-controls="pills-contact" aria-selected="false">Agregar tarea</button>
+                          </li>
+                          </ul>
+                          </div>
+                          </div>
+
+        <div class="row  mt-4">            
+              <div class="col-12 px-5 mb-4 ms-5"> 
+              <h4>Generales</h4>
+              <div class="text-end pe-5 ">
+                Vigente
+                <button type="button" class="btn fondo-gris boton-azul ms-2">
+                  Concluido
+                  </button>
+                  <span class="font-17">Activo</span>
+                  <button type="button" class="btn fondo-gris boton-azul ms-2">
+                    <span>Inactivo</span>
+                    </button>
+                    </div>
+              </div>
         <!--Section Cards-->
-        <div class="container mt-5">
+        <div class="container mb-4">
           <div class="row mb-3 gap-3">
             <!------Card 1------>
             <div class="col rounded border">
@@ -98,8 +178,9 @@
           </div>
           <!---------Card 3--------->
           <div class="row mb-3 gap-3">
+            <div class="col-12"></div>
             <div class="col rounded border">
-              <div class="row mt-5 mb-4">
+              <div class="row py-4 mt-4 mb-4">
                 <div class="col-8 px-5">
                   <h2 class="fs-5 fw-semibold">Acumulado</h2>
                 </div>
@@ -108,8 +189,10 @@
                     Agregar
                   </button>
                 </div>
-                <div class="col-6 px-5 color-gris2">No hay registros</div>
-                <div class="col-6 fw-semibold">0</div>
+                <div class="col-12 px-5">
+                  <span class="color-gris2">No hay registros</span>
+                  <span class="fw-semibold px-4">0</span>
+                </div>
               </div>
               <div class="row  py-4 mb-5">
                 <div class="col-8 ps-5">
@@ -125,7 +208,7 @@
                   <span class="fw-semibold px-4">0</span>
                 </div>
               </div>
-              <div class="row py-4 mb-5">
+              <div class="row py-4 mb-">
                 <div class="col-8 px-5">
                   <h2 class="fs-5 fw-semibold">Relacionado</h2>
                 </div>
@@ -141,7 +224,7 @@
               </div>
           </div>
             <!-----Card 4-------->
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 rounded border rounded border ">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 rounded border rounded border">
               <div class="col px-3 mt-4">
                 <h5 >Conciliación y mediación</h5>
               </div>

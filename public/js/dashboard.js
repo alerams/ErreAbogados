@@ -141,7 +141,7 @@ const showDetalle = (idDivMostrar, idDivOcultar) => {
 const renderDashboard = async (divContent) => {
   initiTitle("Dashboard");
   const html = `
-  <div class="row">
+  <div class="row mb-3">
     <div class="col-12 text-end">
       <div class="dropdown">
         <button class="btn color-negro px-3 py-2 fondo-verde boton-verde sombra1 color-azul dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false">
@@ -851,8 +851,8 @@ const renderDemanda = async (divContent) => {
   initiTitle("Demanda");
   const html = `
   <div class="bg-white mt-4  p-3">
-    <div class="row mb-5 mt-5 px-5 border-bottom">
-    <div class="col-6 py-3">
+    <div class="row mb-4 mt-5 px-5 border-bottom">
+    <div class="col-6 mb-3">
       <h2>Demanda</h2>
       </div>
       </div>
@@ -998,23 +998,23 @@ const renderDemanda = async (divContent) => {
 </div>
 </div>
 </div>
-<!--Editor section-->
-<div class=" border">
-  <div class="row mb-5 mt-5  px-5">
+<!---------Editor section-------------->
+<div class="border">
+  <div class="row mb-5 mt-5 px-5">
     <div class="col-4">
       <h3>Escrito jurídico</h3>
     </div>
-  <div class="col-8 text-end">
-  <button type="button" class="btn py-2 boton-azul  fondo-azul2" data-bs-toggle="modal" data-bs-target="#personaModal">
+  <div class="col-8 col-sm-12 col-md-12 col-lg-12 text-end">
+  <button type="button" class="btn mb-2 boton-azul fondo-azul2" data-bs-toggle="modal" data-bs-target="#personaModal">
     <i class="fa-regular fa-file-lines px-2"></i><span>Cargar platilla</span>
 </button>
-  <button type="button" class="btn  py-2 boton-azul  fondo-azul2 text-white" data-bs-toggle="modal" data-bs-target="#personaModal">
+  <button type="button" class="btn mb-2 boton-azul  fondo-azul2 text-white" data-bs-toggle="modal" data-bs-target="#personaModal">
     <i class="fa-solid fa-cloud-arrow-down px-2"></i><span>Descargar</span>
 </button>
-  <button type="button" class="btn py-2 boton-azul  fondo-azul2" data-bs-toggle="modal" data-bs-target="#personaModal">
+  <button type="button" class="btn mb-2  boton-azul  fondo-azul2" data-bs-toggle="modal" data-bs-target="#personaModal">
     <i class="fa-solid fa-font px-2"></i><span>Agregar texto</span>
 </button>
-  <button type="button" class="btn py-2 fondo-naranja boton-naranja text-white" data-bs-toggle="modal" data-bs-target="#personaModal">
+  <button type="button" class="btn  fondo-naranja boton-naranja text-white" data-bs-toggle="modal" data-bs-target="#personaModal">
     <i class="fa-regular fa-file-word px-2"></i><span>Guardar como .doc</span>
 </button>
   </div>
@@ -1041,17 +1041,18 @@ const renderDemanda = async (divContent) => {
 ////////////////////////
 const renderExpedientes = async (divContent) => {
   initiTitle("Expedientes");
-  const html =` 
-  <!--Titulo-->
-  <div class="bg-white" id="divExpedientes">
+  const html =`
+  <!------------Titulo------------>
+  <div class="bg-white">
     <div id="divExpedientes">
-      <div class="d-flex justify-content-between aligns-items-center mb-5 py-5 px-5 border-bottom">
-      <div class="d-flex">
+      <div class="row pt-5 px-5">
+      <div class="col-6">
         <h2>
           Expedientes
         </h2>
       </div>
   </div>
+  <hr class="mb-5">
   <!--------------------------------Section inputs---------------------------->
   <div class="px-4 textos">
     <div class="row mb-5 py-3">
@@ -1179,214 +1180,201 @@ const renderExpedientes = async (divContent) => {
                                                                                 </table>
                                                                                 </div>
                                                                                 </div>
-                                                                                </div>
-                                                                                <!----------------------------Detalle expedientes---------------------->
-                                                                                <!-------Titulo------>
-                                                                                <div id="divGenerales" class="d-none">
-                                                                                  <div class="bg-white mt-4">
-                                                                                    <div class="row px-5">
-                                                                                      <div class="col-12 mb-5 mt-5">
-                                                                                        <h2 class="btn-azul fw-semibold">
-                                                                                          Expediente: 1212/2015/15-A SA DE CV vs Jorge Pérez López 
-                                                                                          </h2>
-                                                                                          </div>
-                                                                                          </div>
-                                                                                          <!---------------Generales Tabs-------------------->
-                                                                                          <div class="container text-center">
-                                                                                          <div class="row px-5">
-                                                                                          <div class="col-6 col-sm-12 col-md-12 col-lg-6 col-xl-12 col-xxl-12 text-center">
-                                                                                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                                                                              <li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link active " id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
-                                                                                              </li>
-                                                                                              <li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link" id="pills-acuerdos-tab" data-bs-toggle="pill" data-bs-target="#pills-acuerdos" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Acuerdos</button>
-                                                                                              </li>
-                                                                                              <li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link" id="pills-acciones-tab" data-bs-toggle="pill" data-bs-target="#pills-acciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Acciones</button>
-                                                                                              </li>
-                                                                                              <li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link" id="pills-excepciones-tab" data-bs-toggle="pill" data-bs-target="#pills-excepciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Excepciones</button>
-                                                                                              </li>
-                                                                                              <li class="nav-item" role="presentation">
-                                                                                              <button class="nav-link" id="pills-pruebas-tab" data-bs-toggle="pill" data-bs-target="#pills-pruebas" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Pruebas</button>
-                                                                                              </li>
-                                                                                              <li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link" id="pills-resolucion-tab" data-bs-toggle="pill" data-bs-target="#pills-resolucion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Resolución</button>
-                                                                                              </li>
-                                                                                              <li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link" id="pills-conconciliacion-tab" data-bs-toggle="pill" data-bs-target="#pills-conciliacion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Conciliación</button>
-                                                                                              </li>
-                                                                                              <li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link" id="pills-reportes-tab" data-bs-toggle="pill" data-bs-target="#pills-reportes" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reportes</button>
-                                                                                              </li>
-                                                                                              <li class="nav-item" role="presentation">
-                                                                                                <button class="nav-link" id="pills-documentos-tab" data-bs-toggle="pill" data-bs-target="#pills-documentos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Documentos</button>
-                                                                                              </li>
-                                                                                            </ul>
-                                                                                          </div>
-                                                                                        </div>                                                                                          
-                                                                                                                    </div>
-                                                                                                                    <!-- Content Tabs -->
-                                                                                                                    <div class="tab-content" id="pills-tabContent">
-                                                                                                                      <!-- Generales-->
-                                                                                                                      <div class="tab-pane fade show active" id="pills-generales" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-                                                                                                                        <div class="row px-5 mt-4">
-                                                                                                                          <div class="col-6 py-2 mb-4"> 
-                                                                                                                          <h4>Generales</h4>
-                                                                                                                          </div>
-                                                                                                                          <div class="col-6 text-end pe-5">
-                                                                                                                            Vigente
-                                                                                                                            <button type="button" class="btn fondo-gris boton-azul ms-2 mb-2">
-                                                                                                                              Concluido
-                                                                                                                              </button>
-                                                                                                                              <span class="font-17">Activo</span>
-                                                                                                                              <button type="button" class="btn fondo-gris boton-azul ms-2">
-                                                                                                                                <span>Inactivo</span>
-                                                                                                                                </button>
-                                                                                                                                </div>
-                                                                                                                                </div>
-                                                                                                                                <!------------Sections---------->
-    <div class="container bg-white px-4 mt-5">
-       <div class="row mb-3 gap-3">
-         <div class="col rounded border">
-              <div class="row px-5 mb-3 mt-2">
-                <div class="col-3 mt-4 mb-3 fondo-gris rounded py-4 text-center">
-                  <h2 class="fw-semibold">AL</h2>
-                </div>
-                <div class="col-9 mt-5">
-                  <span class="fw-semibold fs-5">Aluguesa</span>
-                </div>
-                <!------Section info----->
-                <div class="col-6 color-gris2 fs-6">Expediente:</div>
-                <div class="col-6 text-end">552/2015/15-A</div>
-                <div class="col-6 color-gris2 fs-6">Tribunal:</div>
-                <div class="col-6 text-end">Junta especial no. 15</div>
-                <div class="col-6 color-gris2 fs-6">Actores:</div>
-                <div class="col-6 text-end">Magguie Romero</div>
-                <div class="col-6 color-gris2 fs-6">Demandados:</div>
-                <div class="col-6 text-end">José Peréz</div>
-                <div class="col-6 color-gris2 fs-6">Demanda inicial:</div>
-                <div class="col-6 text-end">13 Julio 2022</div>
-                <div class="col-6 color-gris2 fs-6">Ampliación, medición, alcaración, precisión:</div>
-                <div class="col-6 text-end">Junta especial no. 15</div>
-                <div class="col-6 color-gris2 fs-6">Demanda laboral:</div>
-                <div class="col-6 text-end">25 Enero 2023</div>
-                <div class="col-6 color-gris2 fs-6">Fecha de presentación de demanda:</div>
-                <div class="col-6 text-end">25 Enero 2023</div>
-              </div>
-            </div>
-            <!-------------CARD 2----------------->
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 border rounded">
-              <div class="col-12 px-5 mt-4 mb-3">
-                <h5>Linea del tiempo / Riesgo</h5>
-              </div>
-              <div class="container">
-                <img src="img/my-app.png"  class="img-fluid">
-              </div>
-            </div>
-        </div>
-        <!-------------CARD 3----------------->
-           
-     <div class="row">
-       <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-            <div class="mb-5 rounded border">
-              <div class="row mt-4 py-4 mb-5">
-                <div class="col-8 px-5">
-                  <h2 class="fs-5 fw-semibold">Acumulado</h2>
-                </div>
-                <div class="col-4 text-end pe-5">
-                  <button class="btn fondo-naranja boton-naranja">
-                    Agregar
-                  </button>
-                </div>
-                <div class="col-6 px-5 color-gris2">No hay registros</div>
-                <div class="col-6 fw-semibold">0</div>
-              </div>
-              <div class="row  py-4 mb-5">
-                <div class="col-8 ps-5">
-                  <h2 class="fs-5 fw-semibold">Alias</h2>
-                </div>
-                <div class="col-4 text-end pe-5">
-                  <button class="btn fondo-naranja boton-naranja">
-                    Agregar
-                  </button>
-                </div>
-                <div class="col-12 px-5">
-                  <span class="color-gris2">No hay registros</span>
-                  <span class="fw-semibold px-4">0</span>
-                </div>
-              </div>
-              <div class="row py-4 mb-5">
-                <div class="col-8 px-5">
-                  <h2 class="fs-5 fw-semibold">Relacionado</h2>
-                </div>
-                <div class="col-4 text-end pe-5">
-                  <button class="btn fondo-naranja boton-naranja">
-                    Agregar
-                  </button>
-                </div>
-                <div class="col-12 px-5">
-                  <span class="color-gris2">Total de registros:</span>
-                  <span class="fw-semibold px-4">4</span>
-                </div>
-              </div>
+                                                                                
+        <!----------------------------Detalle expedientes---------------------->
+       <!---------------Titulo------------->
+       <div id="divGenerales" class="d-none">
+         <div class="bg-white mt-4">
+         <div class="container">
+           <div class="row mb-3">
+             <div class="col-12 col-sm-6 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-3 mt-5 px-5">
+               <h2 class="btn-azul fw-semibold">
+                 Expediente: 1212/2015/15-A SA DE CV vs Jorge Pérez López 
+                 </h2>
+                 </div>
+                 <hr>
+                 </div>
+                 </div>
+                 <!---------------Generales Tabs-------------------->
+                 <div class="container text-center">
+          <div class="row text-center mb-5">
+            <div class="col-6 col-sm-12 col-md-12 col-lg-12 col-xxl-12">
+              <ul class="nav nav-pills mb-3 gap-2" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active " id="pills-generales-tab" data-bs-toggle="pill" data-bs-target="#pills-generales" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Generales</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-acuerdos-tab" data-bs-toggle="pill" data-bs-target="#pills-acuerdos" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Acuerdos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-acciones-tab" data-bs-toggle="pill" data-bs-target="#pills-acciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Acciones</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-excepciones-tab" data-bs-toggle="pill" data-bs-target="#pills-excepciones" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Excepciones</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-pruebas-tab" data-bs-toggle="pill" data-bs-target="#pills-pruebas" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Pruebas</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-resolucion-tab" data-bs-toggle="pill" data-bs-target="#pills-resolucion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Resolución</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-conconciliacion-tab" data-bs-toggle="pill" data-bs-target="#pills-conciliacion" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Conciliación</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-reportes-tab" data-bs-toggle="pill" data-bs-target="#pills-reportes" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reportes</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-documentos-tab" data-bs-toggle="pill" data-bs-target="#pills-documentos" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Documentos</button>
+                </li>
+              </ul>
             </div>
           </div>
-       
-       <!-------------CARD 4----------------->
-       <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
-         <div class="card bg-white py-3">
-           <div class="px-4">
-             <h5 >Conciliación y mediación</h5>
-           </div>
-           <div class="row px-4 mt-4 rounded">
-             <div class="col-12 fondo-gris"> 
-               <div class="row">
-                 <div class="col-8">
-                   <span class="fst-italic">Se ofrecio la cantidad de $40,000.00</span>
+        </div>
+           <!-----------Content Tabs--------->
+           <div class="tab-content" id="pills-tabContent">
+             <!-- Generales-->
+             <div class="tab-pane fade show active" id="pills-generales" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+               <div class="row px-5 mt-4 mb-3">
+                 <div class="col-6 py-2 mb-4"> 
+                 <h4>Generales</h4>
                  </div>
-                 <div class="col-4 text-end"></div>
-                 <div class="col-12 text-end pe-2 font-14">
-                   <span>Fecha: 25 Ene 2022</span>
-                   <p>Por:Antonio Ramiro</p>
-                 </div>
-               </div>
-             </div>
-             <div class="row mt-3 mb-2 ms-1">
-               <div class="col-12 text-end ms-4">
-                 <button type="button" class="btn fondo-naranja boton-naranja">
-                   <span>Se acepta</span>
-                 </button>
-                 <button type="button" class="btn ms-2 fondo-naranja boton-naranja">
-                   <span>No acepta</span>
-                 </button>
-               </div>
-             </div>
-             <div class="col-6 mb-3 fw-semibold">Representado: Actor</div>
-             <div class="col-md-12 mb-4">
-               <div class="form-outline">
-                 <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Nombre</label>
-                 <input type="email" class="form-control form-control-lg fs-6 fw-normal fondo-gris border-0" placeholder="Ramiro Antonio"/>
-               </div>
-             </div>
-             <div class="col-md-12 mb-4">
-               <div class="form-outline">
-                 <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Ingresar cantidad</label>
-                 <input type="email" class="form-control form-control-lg fs-6 fw-normal" placeholder="Ingresar cantidad"/>
-                 <p class="fst-italic px-2 color-gris2 mt-2" >Escriba una cantidad, presione enter para guardar</p>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
+                 <div class="col-6 text-end pe-5">
+                   Vigente
+                   <button type="button" class="btn fondo-gris boton-azul px-2 mb-2">
+                     Concluido
+                     </button>
+                      Activo
+                     <button type="button" class="btn fondo-gris boton-azul">
+                       Inactivo
+                       </button>
+                       </div>
+                       </div>
+                       <!------------Sections---------->
+                       <div class="container bg-white px-4 ">
+                       <div class="row mb-3 gap-3">
+                       <!------Card 1------>
+                       <div class="col rounded border">
+                         <div class="row px-5 mb-3 mt-2">
+                           <div class="col-3 mt-4 mb-3 fondo-gris rounded py-4 text-center">
+                             <h2 class="fw-semibold">AL</h2>
+                           </div>
+                           <div class="col-9 mt-5">
+                             <span class="fw-semibold fs-5">Aluguesa</span>
+                           </div>
+                           <!------Section info----->
+                           <div class="col-6 color-gris2 fs-6">Expediente:</div>
+                           <div class="col-6 text-end">552/2015/15-A</div>
+                           <div class="col-6 color-gris2 fs-6">Tribunal:</div>
+                           <div class="col-6 text-end">Junta especial no. 15</div>
+                           <div class="col-6 color-gris2 fs-6">Actores:</div>
+                           <div class="col-6 text-end">Magguie Romero</div>
+                           <div class="col-6 color-gris2 fs-6">Demandados:</div>
+                           <div class="col-6 text-end">José Peréz</div>
+                           <div class="col-6 color-gris2 fs-6">Demanda inicial:</div>
+                           <div class="col-6 text-end">13 Julio 2022</div>
+                           <div class="col-6 color-gris2 fs-6">Ampliación, medición, alcaración, precisión:</div>
+                           <div class="col-6 text-end">Junta especial no. 15</div>
+                           <div class="col-6 color-gris2 fs-6">Demanda laboral:</div>
+                           <div class="col-6 text-end">25 Enero 2023</div>
+                           <div class="col-6 color-gris2 fs-6">Fecha de presentación de demanda:</div>
+                           <div class="col-6 text-end">25 Enero 2023</div>
+                         </div>
+                       </div>
+                       <!-------------Card 2-------------->
+                       <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 border rounded">
+                         <div class="col-12 px-5 mt-4 mb-3">
+                           <h5>Linea del tiempo / Riesgo</h5>
+                         </div>
+                         <div class="container">
+                           <img src="img/my-app.png"  class="img-fluid">
+                         </div>
+                       </div>
+                     </div>
+                     <!----------------Card 3-------------->
+                     <div class="row mb-3 gap-3">
+                       <div class="col-12"></div>
+                       <div class="col rounded border">
+                         <div class="row py-4 mt-4 mb-4">
+                           <div class="col-8 px-5">
+                             <h2 class="fs-5 fw-semibold">Acumulado</h2>
+                           </div>
+                           <div class="col-4 text-end pe-5">
+                             <button class="btn fondo-naranja boton-naranja">
+                               Agregar
+                             </button>
+                           </div>
+                           <div class="col-12 px-5">
+                             <span class="color-gris2">No hay registros</span>
+                             <span class="fw-semibold px-4">0</span>
+                           </div>
+                         </div>
+                         <div class="row  py-4 mb-5">
+                           <div class="col-8 ps-5">
+                             <h2 class="fs-5 fw-semibold">Alias</h2>
+                           </div>
+                           <div class="col-4 text-end pe-5">
+                             <button class="btn fondo-naranja boton-naranja">
+                               Agregar
+                             </button>
+                           </div>
+                           <div class="col-12 px-5">
+                             <span class="color-gris2">No hay registros</span>
+                             <span class="fw-semibold px-4">0</span>
+                           </div>
+                         </div>
+                         <div class="row py-4 mb-">
+                           <div class="col-8 px-5">
+                             <h2 class="fs-5 fw-semibold">Relacionado</h2>
+                           </div>
+                           <div class="col-4 text-end pe-5">
+                             <button class="btn fondo-naranja boton-naranja">
+                               Agregar
+                             </button>
+                           </div>
+                           <div class="col-12 px-5">
+                             <span class="color-gris2">Total de registros:</span>
+                             <span class="fw-semibold px-4">4</span>
+                           </div>
+                         </div>
+                     </div>
+                       <!-------------Card 4--------------->
+                       <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 rounded border rounded border">
+                         <div class="col px-3 mt-4 ">
+                           <h5 >Conciliación y mediación</h5>
+                         </div>
+                         <div class="row px-4">
+                               <div class="col fst-italic">
+                                 <p class="text-end font-14">Fecha: 25 Ene 2023</p>
+                                 <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Por: Ramiro Antonio</label>
+                                 <input class="form-control fw-normal fs-6 fondo-gris border-0" type="text" placeholder="Se ofreció la cantidad de $40,000.00" aria-label="Disabled input example" disabled>
+                               </div>
+                           <div class="col-12 text-end mt-3 ms-3">
+                            <button type="button" class="btn fondo-naranja boton-naranja">
+                              <span>Se acepta</span>
+                            </button>
+                            <button type="button" class="btn ms-2 fondo-naranja boton-naranja">
+                              <span>No acepta</span>
+                            </button>
+                          </div>
+                          <div class="col-6 mt-3 fw-semibold font-17">Representado: Actor</div>
+                          <div class="col-12 mt-3">
+                             <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Nombre</label>
+                             <input class="form-control fw-normal fs-6 fondo-gris border-0" type="text" placeholder="Ramiro Antonio" aria-label="Disabled input example" disabled>
+                         </div>
+                         <div class="col mt-3">
+                             <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Ingresar cantidad</label>
+                             <input type="number" class="form-control  fs-6 fw-normal" placeholder="Ingresar cantidad"/>
+                             <p class="fst-italic px-2 color-gris2 mt-2" >Escriba una cantidad, presione enter para guardar</p>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
    </div>
   </div>
-  </div>
-  </div>  <!-- ciera el row-->
+  
 
-  <!-- Acuerdos-->
+  <!----------------Acuerdos-------------->
   <div class="tab-pane fade mb-4" id="pills-acuerdos" role="tabpanel" aria-labelledby="Acuerdos" tabindex="0">
   <div class="table-responsive py-4">
   <table class="table text-center textos mt-4">
@@ -1598,7 +1586,7 @@ const renderExpedientes = async (divContent) => {
             <span>Se acepta</span>
           </button>
           <button type="button" class="btn ms-2 fondo-naranja boton-naranja">
-            <span>No acepta</span>
+            <span>No acepta</span> Si
           </button>
         </div>
       </div>
@@ -1613,7 +1601,9 @@ const renderExpedientes = async (divContent) => {
         <div class="form-outline">
           <label class="form-label fw-normal  color-negro" for="typeEmailX-2 ">Ingresar cantidad</label>
           <input type="email" class="form-control form-control-lg fs-6 fw-normal" placeholder="Ingresar cantidad"/>
-          <p class="fst-italic px-2 color-gris2 mt-2" >Escriba una cantidad, presione enter para guardar</p>
+          <button type="button" class="btn ms-2 fondo-naranja boton-naranja">
+          Guardar
+          </button>
         </div>
       </div>
     </div>
@@ -1677,15 +1667,13 @@ const renderExpedientes = async (divContent) => {
                     </tbody>
                   </table>
                   </div>
-  </div>
+    </div>
+    </div>
 </div>
 </div>
 </div>
-
-
   `;
   divContent.removeClass("mt-5 text-center").html(html);
-  Quill('snow-editor');
   // const getInfo = await requestAxios('GET', 'urlapizifris', {});
   // if(getInfo.code === 200) {
   //     console.log('Todo verde');
@@ -1706,11 +1694,14 @@ const renderBitacora = async (divContent) => {
     <div id="seccionAudiencias">
       <!--Tabs end-->
       <div class="row px-5 pt-5">
-        <div class="col-6">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
           <h2>Bitácora Audiencias</h2>
+          <span class="badge fondo-gris fs-6">Semana del 1 al 7 de Diciembre 2021</span>
           </div>
-          <div class="col-6 text-end">
-            <ul class="nav nav-pills mt-3 justify-content-end">
+          </div>
+          <div class="row">
+          <div class="col-12  pe-5 text-end">
+            <ul class="nav nav-pills mt-3 gap-2 justify-content-end">
               <li class="nav-item dropdown">
                 <a class="nav-link nav-verde  dropdown-toggle"  data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                   <i class="fa-solid fa-sliders px-2"></i>
@@ -1741,21 +1732,18 @@ const renderBitacora = async (divContent) => {
                           </li>
                           </ul>
                           </div>
-                          <div class="row">
-                            <div class="col-4 mb-3">
-                              <span class="badge fondo-gris fs-6">Semana del 1 al 7 de Diciembre 2021</span>
-                              </div>
-                              </div>
+                          </div>
+                          
                               <hr class="mb-5">
                                 <div class="table-responsive py-4 tabla1">
                                   <table class="table text-center textos mt-4 mb-4">
                                     <thead>
                                       <tr>
-                                        <th style="min-width:300px; ">Cliente</th>
-                                        <th style="min-width:300px; ">Lugar</th>
+                                        <th style="min-width:200px; ">Cliente</th>
+                                        <th style="min-width:200px; ">Lugar</th>
                                         <th style="min-width:200px; ">Junta/Tribunal</th>
-                                        <th style="min-width:300px; ">Día</th>
-                                        <th style="min-width:300px; ">Hora</th>
+                                        <th style="min-width:200px; ">Día</th>
+                                        <th style="min-width:200px; ">Hora</th>
                                         <th style="min-width:200px; ">Tipo</th>
                                         <th style="min-width:200px; ">Documentos</th>
                                         <th style="min-width:200px; ">Oferente</th>
@@ -2188,10 +2176,10 @@ const renderDocumentos = async (divContent) => {
     </div>
   <hr class="mb-5">
 
-  <!-- Tabs -->
-<div class="row px-5 mt-4 text-end">
+  <!---------------Tabs-------------->
+<div class="row px-5 mt-4 text-end ">
 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+<ul class="nav nav-pills mb-3 gap-2" id="pills-tab" role="tablist">
 <li class="nav-item dropdown">
     <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Expediente</a>
     <ul class="dropdown-menu">
@@ -2212,7 +2200,7 @@ const renderDocumentos = async (divContent) => {
 
 </ul>
 </div>
-<div class="col-6 text-end">
+<div class="col-6 col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-end">
 <div class="dropdown">
           <button class="btn color-negro px-3 py-2 fondo-verde boton-verde sombra1 color-azul dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-sliders px-2"></i>
